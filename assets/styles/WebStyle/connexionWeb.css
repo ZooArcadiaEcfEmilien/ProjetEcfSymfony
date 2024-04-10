@@ -1,0 +1,107 @@
+@media only screen and (min-width: 901px) {
+    /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .banderolePub{
+        height: 5%;
+        background-color: rgba(255, 5, 5, 0.595);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        background-color: rgba(54, 85, 28, 0.693);
+        padding: 10px;
+    }
+    
+    nav a {
+        color: white;
+        border-right: 1px solid black;
+        text-decoration: none;
+        flex: 1; 
+        text-align: center;
+        padding: 10px; 
+    }
+    footer {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        margin-block-start: auto;
+    }
+    .footer-links {
+        display: flex;
+        padding: initial;
+        justify-content: space-evenly;
+    }
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        
+    }
+
+/*FORMULAIRE DE CONTACT*/
+h1 {
+    text-align: center;
+    content: "Cette espace de connexion est uniquement réservé à notre personnel";
+}
+.login-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 5%;
+  }
+.login-form{
+    background-color: darkgreen;
+    padding: 3%;
+    border-radius: 3%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+button{
+    background-color: rgb(15, 62, 14);
+    width: 100%;
+    padding: 5%;
+    color: #fff;
+    border: none;
+    border-radius: 3%;
+    cursor: pointer;
+}
+.forgot-password a{
+    color: white;
+    margin-top: 2%;
+    text-decoration: none;
+
+}
+.forgot-password{
+    margin-top: 5%;
+    text-align: center;
+
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3%;
+  }
+  input[type="text"], input[type="password"] {
+    width: 95%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 3%;
+    
+  }
+  button:hover {
+    background-color: #309f50;
+  }
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+}

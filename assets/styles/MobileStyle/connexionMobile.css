@@ -1,0 +1,135 @@
+@media only screen and (max-width: 600px) {
+    /* Styles pour les écrans de petite taille (mobiles) */
+
+    .element-a-cacher {
+        display: none;
+    }
+    .introduction{
+        text-align: center;
+    }
+    .nav-container {
+        text-align: center;
+    }
+          
+    .menu-btn {
+        display: flex;
+        background-color: #07522F;
+
+        border: none;
+        border-radius: 5px;
+        width: 17%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: fantasy;
+        font-size: 100%;
+
+    }
+          
+    .nav-menu {
+        display: none;
+    }
+          
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        background-color: #07522F;
+
+    }
+        .menu-btn:hover{
+        background-color: #309f50;
+    } 
+          
+    .nav-menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #ffffff;
+
+        font-weight: bold;
+    }
+    h1::before{
+        content: "Zoo Arcadia";
+    }
+    .menuTitreMobile{
+        display: flex;
+        background-color: #07522F;
+        height: 10vh;
+
+    }
+    h1 {
+        margin-left: 13%;
+    }
+    .carrousselImageAccueil{
+        width: 80%;
+        height: 35%;
+        border: solid 1px black;
+        margin: 2vh auto;
+    }
+    footer{
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        background-color: #0000007a;
+    }
+    .footer-links a{
+      color: white;
+  }
+          /*Formulaire de connexion*/
+    .login-container {
+        width: 90%;
+
+        margin: 5%;
+    }
+    
+    .form-group {
+        margin-bottom: 5%;
+      }
+    .login-form{
+        background-color: darkgreen;
+        padding: 3%;
+        border-radius: 3%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    }
+    button{
+        background-color: rgb(15, 62, 14);
+        width: 100%;
+        padding: 5%;
+        color: #fff;
+        border: none;
+        border-radius: 3%;
+        cursor: pointer;
+    }
+    .forgot-password a{
+        color: white;
+        margin-top: 2%;
+        text-decoration: none;
+
+    }
+    .forgot-password{
+        margin-top: 5%;
+        text-align: center;
+
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 3%;
+      }
+      input[type="text"], input[type="password"] {
+        width: 95%;
+        padding: 2%;
+        border: 1px solid #ccc;
+        border-radius: 3%;
+        
+      }
+      button:hover {
+        background-color: #309f50;
+      }
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+}

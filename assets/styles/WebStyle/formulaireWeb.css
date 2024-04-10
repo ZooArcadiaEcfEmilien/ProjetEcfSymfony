@@ -1,0 +1,106 @@
+@media only screen and (min-width: 901px) {
+    /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
+    .banderolePub{
+        height: 5%;
+        background-color: rgba(74, 114, 40, 0.5);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    h1{
+      content: " Formulaire de contact ";
+      text-align: center;
+  }
+
+    nav {
+        display: flex;
+        background-color: rgba(54, 85, 28, 0.693);
+        padding: 10px;
+    }
+    
+    nav a {
+        color: white;
+        border-right: 1px solid black;
+        text-decoration: none;
+        flex: 1; 
+        text-align: center;
+        padding: 10px; 
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 1%;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 2%;
+  }
+  .footer-links {
+      display: flex;
+      padding: initial;
+      justify-content: space-evenly;
+  }
+  .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      
+  }
+  
+  form {
+      max-width: 40%;
+      margin: auto;
+      height: 70%;
+      background-color: #586c3f99;
+      border: solid white 2px;
+      padding: 1%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-bottom: 2%;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      
+    }
+  
+    button:hover {
+      background-color: #45a049;
+    }
+    .label1 {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    #description {
+      height: 40%;
+    }
+    .label2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      margin: 1%;
+    }
+  }

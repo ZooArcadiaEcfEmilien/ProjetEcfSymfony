@@ -2,37 +2,39 @@
 
 namespace App\Entity;
 
+use App\Repository\HabitatEntityRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Entity(repositoryClass: HabitatEntityRepository::class)]
+#[ORM\Table(name: "habitat")]
 
-#[ORM\Entity]
-#[ORM\Table(name: "service")]
-class service{
-
+class HabitatEntity 
+{
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
-    private $idService;
+    #[ORM\Column]
+    private ?int $id = null;
 
     #[ORM\Column(type:"string")]
-    private $serviceNom;
+    private $habitatType;
 
     #[ORM\Column(type:"string")]
-    private $serviceTitre;
+    private $habitatNom;
 
     #[ORM\Column(type:"string")]
-    private $serviceDescription;
+    private $habitatDescription;
 
     #[ORM\Column(type:"text")]
-    private ?string $serviceImage = null;
+    private ?string $habitatImage = null;
 
+    #[ORM\OneToMany(mappedBy: 'habitat', targetEntity: AnimalEntity::class)]
+    private Collection $animaux;
 
-    
-//---------------------------------------------FONCTIONS CRUD---------------------------------------------//
-    public function getId(): ?int{
+    public function getId(): ?int
+    {
         return $this->id;
     }
-
     public function createProperty($propertyName, $propertyValue){
         $setterMethod = 'set' . ucfirst($propertyName);
         if (method_exists($this, $setterMethod)) {

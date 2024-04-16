@@ -29,7 +29,7 @@ class ServiceTabEntity
     {
         return $this->id;
     }
-    public function createProperty($propertyName, $propertyValue){
+    /*public function createProperty($propertyName, $propertyValue){
         $setterMethod = 'set' . ucfirst($propertyName);
         if (method_exists($this, $setterMethod)) {
             $this->$setterMethod($propertyValue);
@@ -56,5 +56,5 @@ class ServiceTabEntity
         if (method_exists($this, $setterMethod)) {
             $this->$setterMethod(null);
         }
-    }
+    }*/
 }

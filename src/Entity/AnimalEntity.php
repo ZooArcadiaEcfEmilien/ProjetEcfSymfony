@@ -43,37 +43,47 @@ class AnimalEntity
     #[ORM\Column(type: "text")]
     private ?string $detailsCommentaire = null;
 
+    //SET METHODE
     public function getId(): ?int
     {
         return $this->id;
     }
-    public function createProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+    public function setRace(string $race): void
+    {
+        $this->race = $race;
+    }
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
+    }public function setHabitat(HabitatEntity $habitat): void
+    {
+        $this->habitat = $habitat;
+    }
+    
+    public function setEtatAnimal(string $etatAnimal): void
+    {
+        $this->etatAnimal = $etatAnimal;
+    }
+    public function setnourritureType(?string $nourritureType): void
+    {
+        $this->nourritureType = $nourritureType;
+    }
+    public function setnourritureQuantite(?int $nourritureQuantite): void
+    {
+        $this->nourritureQuantite = $nourritureQuantite;
+    }
+    
+    public function setdatePassage(?\DateTimeInterface $datePassage): void
+    {
+        $this->datePassage = $datePassage;
     }
 
-    public function readProperty($propertyName){
-        $getterMethod = 'get' . ucfirst($propertyName);
-        if (method_exists($this, $getterMethod)) {
-            return $this->$getterMethod();
-        }
-        return null;
+    public function setDetailCommentaire (?string $detailsCommentaire): void
+    {
+        $this->detailsCommentaire = $detailsCommentaire;
     }
-
-    public function updateProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
-    }
-
-    public function deleteProperty($propertyName){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod(null);
-        }
-    }
-
 }

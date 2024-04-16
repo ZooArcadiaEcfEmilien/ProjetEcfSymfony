@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<title>AnimalEntity</title>
+
+{% block body %}
+    <h1>AnimalEntity</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ animal_entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ animal_entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Race</th>
+                <td>{{ animal_entity.race }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ animal_entity.image }}</td>
+            </tr>
+            <tr>
+                <th>EtatAnimal</th>
+                <td>{{ animal_entity.etatAnimal }}</td>
+            </tr>
+            <tr>
+                <th>NourritureType</th>
+                <td>{{ animal_entity.nourritureType }}</td>
+            </tr>
+            <tr>
+                <th>NourritureQuantite</th>
+                <td>{{ animal_entity.nourritureQuantite }}</td>
+            </tr>
+            <tr>
+                <th>DatePassage</th>
+                <td>{{ animal_entity.datePassage ? animal_entity.datePassage|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DetailsCommentaire</th>
+                <td>{{ animal_entity.detailsCommentaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_animal_index') }}">back to list</a>
+
+    <a href="{{ path('app_animal_edit', {'id': animal_entity.id}) }}">edit</a>
+
+    {{ include('animal/_delete_form.html.twig') }}
+{% endblock %}

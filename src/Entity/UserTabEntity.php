@@ -30,6 +30,7 @@ class UserTabEntity
     {
         return $this->id;
     }
+    /*
     public function createProperty($propertyName, $propertyValue){
         $setterMethod = 'set' . ucfirst($propertyName);
         if (method_exists($this, $setterMethod)) {
@@ -58,5 +59,5 @@ class UserTabEntity
             $this->$setterMethod(null);
         }
     }
-    
+    */
 }

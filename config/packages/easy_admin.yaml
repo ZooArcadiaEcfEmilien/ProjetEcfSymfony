@@ -1,9 +1,0 @@
-easy_admin:
-    entities:
-        - App\Entity\AnimalEntity
-        - App\Entity\AvisEntity
-        - App\Entity\FormulaireEntity
-        - App\Entity\HabitatEntity
-        - App\Entity\ServiceTabEntity
-        - App\Entity\UserAccesEntity
-        - App\Entity\UserTabEntity

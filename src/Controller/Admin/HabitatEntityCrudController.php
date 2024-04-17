@@ -24,5 +24,14 @@ class HabitatEntityCrudController extends AbstractCrudController
             TextEditorField::new('description'),
         ];
     }
-    */
+    */    
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id')->hideOnForm(), // Masquer l'ID dans le formulaire
+            TextField::new('habitatNom', 'Nom'),
+            TextEditorField::new('habitatDescription', 'Description'),
+            TextField::new('habitatImage', 'Image'), 
+        ];
+    }
 }

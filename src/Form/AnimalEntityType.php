@@ -20,13 +20,11 @@ class AnimalEntityType extends AbstractType
             ->add('etatAnimal')
             ->add('nourritureType')
             ->add('nourritureQuantite')
-            ->add('datePassage', null, [
-                'widget' => 'single_text',
-            ])
+            ->add('datePassage', null, ['widget' => 'single_text',])
             ->add('detailsCommentaire')
             ->add('habitat', EntityType::class, [
                 'class' => HabitatEntity::class,
-                'choice_label' => 'id',
+                'choice_label' => 'habitatNom',
             ])
         ;
     }

@@ -17,9 +17,6 @@ class HabitatEntity
     private ?int $id = null;
 
     #[ORM\Column(type:"string")]
-    private $habitatType;
-
-    #[ORM\Column(type:"string")]
     private $habitatNom;
 
     #[ORM\Column(type:"string")]
@@ -34,5 +31,45 @@ class HabitatEntity
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getHabitatNom(): string
+    {
+        return $this->habitatNom;
+    }
+
+    public function setHabitatNom(string $habitatNom): void
+    {
+        $this->habitatNom = $habitatNom;
+    }
+
+    public function getHabitatDescription(): string
+    {
+        return $this->habitatDescription;
+    }
+
+    public function setHabitatDescription(string $habitatDescription): void
+    {
+        $this->habitatDescription = $habitatDescription;
+    }
+
+    public function getAnimaux(): Collection
+    {
+        return $this->animaux;
+    }
+
+    public function setAnimaux(Collection $animaux): void
+    {
+        $this->animaux = $animaux;
+    }
+
+    public function getHabitatImage(): ?string
+    {
+        return $this->habitatImage;
+    }
+
+    public function setHabitatImage(string $habitatImage): void
+    {
+        $this->habitatImage = $habitatImage;
     }
 }

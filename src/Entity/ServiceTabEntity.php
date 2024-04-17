@@ -25,8 +25,25 @@ class ServiceTabEntity
     #[ORM\Column(type:"text")]
     private ?string $serviceImage = null;
 
+    // GET Function
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function getServiceNom(): string
+    {
+        return $this->serviceNom;
+    }
+    public function getServiceTitre(): string
+    { 
+        return $this->serviceTitre;
+    }
+    public function getServiceDescription(): string
+    {
+        return $this->serviceDescription;
+    }
+    public function getServiceImage(): string
+    {
+        return $this->serviceImage;
     }
 }

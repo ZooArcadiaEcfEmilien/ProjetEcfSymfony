@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Text;
 
 #[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
 #[ORM\Table(name: "animal")]
@@ -40,14 +41,11 @@ class AnimalEntity
     #[ORM\Column(type: "datetime")]
     private ?\DateTimeInterface $datePassage = null;
 
-    #[ORM\Column(type: "text")]
+    #[ORM\Column(type: "string", nullable: true)]
     private ?string $detailsCommentaire = null;
 
     //SET METHODE
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+
     public function setName(string $name): void
     {
         $this->name = $name;
@@ -86,4 +84,49 @@ class AnimalEntity
     {
         $this->detailsCommentaire = $detailsCommentaire;
     }
+
+    // GET METHODE 
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+    
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function getRace(): ?string
+    {
+        return $this->race;
+    }
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+    public function getHabitat(): ?HabitatEntity
+    {
+        return $this->habitat;
+    }    
+    public function getEtatAnimal(): ?string
+    {
+        return $this->etatAnimal;
+    }
+    public function getNourritureType(): ?string
+    {
+        return $this->nourritureType;
+    }
+    public function getNourritureQuantite(): ?int
+    {
+        return $this->nourritureQuantite;
+    }
+    public function getDatePassage(): ?\DateTimeInterface
+    {
+        return $this->datePassage;
+    }
+    public function getdetailsCommentaire(): ?string
+    {
+        return $this->detailsCommentaire;
+    }
+    
 }

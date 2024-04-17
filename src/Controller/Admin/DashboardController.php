@@ -7,6 +7,8 @@ use App\Entity\AvisEntity;
 use App\Entity\FormulaireEntity;
 use App\Entity\HabitatEntity;
 use App\Entity\ServiceTabEntity;
+use App\Entity\Statistique;
+use App\Entity\StatistiqueEntity;
 use App\Entity\UserAccesEntity;
 use App\Entity\UserTabEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -21,9 +23,6 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-
-
-
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
         return $this->redirect($adminUrlGenerator->setController(AnimalEntityCrudController::class)->generateUrl());
     }
@@ -36,13 +35,13 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-         yield MenuItem::linkToCrud('AnimalEntity', 'fas fa-animal', AnimalEntity::class);
-        yield MenuItem::linkToCrud('AvisEntity','fas fa-avis', AvisEntity::class);
-         yield MenuItem::linkToCrud('FormulaireEntity','fas fa-formulaire', FormulaireEntity::class);
-         yield MenuItem::linkToCrud('HabitatEntity','fas fa-habitat',HabitatEntity::class);
-         yield MenuItem::linkToCrud('ServiceEntity','fas fa-service', ServiceTabEntity::class);
-         yield MenuItem::linkToCrud('UserAccesEntity','fas fa-userAcces', UserAccesEntity::class);
-         yield MenuItem::linkToCrud('UserTabEntity','fas fa-userTab', UserTabEntity::class);
-         
+        yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class);
+        yield MenuItem::linkToCrud('Avis', 'fas fa-star', AvisEntity::class);
+        yield MenuItem::linkToCrud('Formulaires', 'fas fa-file-alt', FormulaireEntity::class);
+        yield MenuItem::linkToCrud('Habitats', 'fas fa-home', HabitatEntity::class);
+        yield MenuItem::linkToCrud('Services', 'fas fa-concierge-bell', ServiceTabEntity::class);
+        yield MenuItem::linkToCrud('UserAcces', 'fas fa-user', UserAccesEntity::class);
+        yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class);
+        yield MenuItem::linkToCrud('Statistiques', 'fas fa-chart-bar', StatistiqueEntity::class);
     }
 }

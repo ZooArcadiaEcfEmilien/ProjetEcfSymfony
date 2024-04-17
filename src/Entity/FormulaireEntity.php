@@ -28,8 +28,36 @@ class FormulaireEntity {
     #[ORM\Column(type:"string")]
     private $descriptionFormulaire;
 
+        /* GET FUNCTION */
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+    /*
+    public function getNomFormulaire(): string
+    {
+        return $this->nomFormulaire;
+    }
+    public function getPrenomFormulaire(): string
+    {
+        return $this->prenomFormulaire;
+    }
+    public function getDescriptionFormulaire(): string
+    {
+        return $this->descriptionFormulaire;
+    }
+    public function getAdresseMailFormulaire(): string
+    {
+        return $this->adresseMailFormulaire;
+    }
+    public function getSujetFormulaire(): string
+    {
+        return $this->sujetFormulaire;
+    }*/
+    // SET FUNCTION
+    public function getNomFormulaire(string $nomFormulaire): void
+    {
+        $this->nomFormulaire = $nomFormulaire;
     }
 }

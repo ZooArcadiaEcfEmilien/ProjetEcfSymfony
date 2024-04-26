@@ -15,7 +15,7 @@ class AvisEntityCrudController extends AbstractCrudController
         return AvisEntity::class;
     }
 
-    
+    /*
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -24,5 +24,5 @@ class AvisEntityCrudController extends AbstractCrudController
             TextEditorField::new('descriptionAvis'),
         ];
     }
-    
+    */
 }

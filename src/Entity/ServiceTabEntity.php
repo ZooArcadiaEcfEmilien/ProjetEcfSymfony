@@ -46,4 +46,26 @@ class ServiceTabEntity
     {
         return $this->serviceImage;
     }
+
+    // SET FUNCTION
+    public function setServiceNom(string $serviceNom): void
+    {   
+        $this->serviceNom = $serviceNom;
+    }
+
+    public function setServiceTitre(string $serviceTitre): void
+    {
+        $this->serviceTitre = $serviceTitre;
+    }
+
+    public function setServiceDescription(string $serviceDescription): void
+    {
+        $this->serviceDescription = $serviceDescription;
+    }
+
+    public function setServiceImage(?string $serviceImage): void
+    {
+        $this->serviceImage = $serviceImage;
+    }
+
 }

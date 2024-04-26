@@ -15,7 +15,6 @@ class ServiceTabEntityCrudController extends AbstractCrudController
         return ServiceTabEntity::class;
     }
 
-    
     public function configureFields(string $pageName): iterable
     {
         return [

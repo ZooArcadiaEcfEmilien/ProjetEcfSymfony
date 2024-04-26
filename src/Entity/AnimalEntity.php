@@ -22,11 +22,11 @@ class AnimalEntity
     #[ORM\Column(type: "string", length: 255)]
     private $race;
 
-    #[ORM\Column(type: "text")]
+    #[ORM\Column(type: "string")]
     private ?string $image = null;
 
     #[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
-    private HabitatEntity $habitat;
+    private ?HabitatEntity $habitat;
     
 
     #[ORM\Column(type: "string", length: 255)]
@@ -57,7 +57,9 @@ class AnimalEntity
     public function setImage(string $image): void
     {
         $this->image = $image;
-    }public function setHabitat(HabitatEntity $habitat): void
+    }
+
+    public function setHabitat(HabitatEntity $habitat): void
     {
         $this->habitat = $habitat;
     }
@@ -80,7 +82,7 @@ class AnimalEntity
         $this->datePassage = $datePassage;
     }
 
-    public function setDetailCommentaire (?string $detailsCommentaire): void
+    public function setDetailsCommentaire (?string $detailsCommentaire): void
     {
         $this->detailsCommentaire = $detailsCommentaire;
     }
@@ -124,9 +126,14 @@ class AnimalEntity
     {
         return $this->datePassage;
     }
-    public function getdetailsCommentaire(): ?string
+    public function getDetailsCommentaire(): ?string
     {
         return $this->detailsCommentaire;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name; 
     }
     
 }

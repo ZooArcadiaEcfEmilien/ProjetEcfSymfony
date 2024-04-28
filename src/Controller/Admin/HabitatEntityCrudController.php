@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use App\Form\HabitatEntityType; // Import du formulaire HabitatEntityType
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 
 
@@ -28,7 +29,10 @@ class HabitatEntityCrudController extends AbstractCrudController
             // Utilisation des champs définis dans HabitatEntityType
             TextField::new('habitatNom', 'Habitat'),
             TextField::new('habitatDescription', 'Description'),
-            TextField::new('habitatImage', 'Image')
+            TextField::new('habitatImage', 'Image'),
+            AssociationField::new('animalEntities')
+           // ->hideOnForm() // Vous pouvez cacher le champ dans le formulaire d'édition de l'habitat
+            ->setLabel('Animaux') // Étiquette du champ
         ];
     }
 

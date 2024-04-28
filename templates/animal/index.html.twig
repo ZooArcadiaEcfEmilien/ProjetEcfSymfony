@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<title>AnimalEntity index</title>
+
+{% block body %}
+    <h1>AnimalEntity index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Race</th>
+                <th>Image</th>
+                <th>EtatAnimal</th>
+                <th>NourritureType</th>
+                <th>NourritureQuantite</th>
+                <th>DatePassage</th>
+                <th>DetailsCommentaire</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animal_entity in animal_entities %}
+            <tr>
+                <td>{{ animal_entity.id }}</td>
+                <td>{{ animal_entity.name }}</td>
+                <td>{{ animal_entity.race }}</td>
+                <td>{{ animal_entity.image }}</td>
+                <td>{{ animal_entity.etatAnimal }}</td>
+                <td>{{ animal_entity.nourritureType }}</td>
+                <td>{{ animal_entity.nourritureQuantite }}</td>
+                <td>{{ animal_entity.datePassage ? animal_entity.datePassage|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ animal_entity.detailsCommentaire }}</td>
+                <td>
+                    <a href="{{ path('app_animal_show', {'id': animal_entity.id}) }}">show</a>
+                    <a href="{{ path('app_animal_edit', {'id': animal_entity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_animal_new') }}">Create new</a>
+{% endblock %}

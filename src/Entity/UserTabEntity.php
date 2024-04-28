@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserTabEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Void_;
 
 #[ORM\Entity(repositoryClass: UserTabEntityRepository::class)]
 #[ORM\Table(name:"user")]
@@ -26,37 +27,46 @@ class UserTabEntity
 
     #[ORM\Column(type:"string")]
     private $mail;
+
     public function getId(): ?int
     {
         return $this->id;
     }
-    public function createProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function getUserType(): ?string
+    {
+        return $this->userType;
+    }
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+    public function getUserName(): ?string
+    {
+        return $this->userName;
     }
 
-    public function readProperty($propertyName){
-        $getterMethod = 'get' . ucfirst($propertyName);
-        if (method_exists($this, $getterMethod)) {
-            return $this->$getterMethod();
-        }
-        return null;
+    // SET FUNCTION
+
+    public function setUserType(string $userType): void 
+    {
+        $this->userType = $userType;
     }
 
-    public function updateProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+    public function setMail(string $mail): void
+    {
+        $this->mail = $mail;
+    }
+    public function setUserName(string $userName): void
+    {
+        $this->userName = $userName;
     }
 
-    public function deleteProperty($propertyName){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod(null);
-        }
-    }
-    
 }

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Text;
 
 #[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
 #[ORM\Table(name: "animal")]
@@ -21,11 +22,12 @@ class AnimalEntity
     #[ORM\Column(type: "string", length: 255)]
     private $race;
 
-    #[ORM\Column(type: "text")]
+    #[ORM\Column(type: "string")]
     private ?string $image = null;
 
-    #[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
-    private HabitatEntity $habitat;
+    /*#[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
+    #[ORM\JoinColumn(name: "habitat_id", referencedColumnName: "id")]
+    private ?HabitatEntity $habitat;*/
     
 
     #[ORM\Column(type: "string", length: 255)]
@@ -40,40 +42,115 @@ class AnimalEntity
     #[ORM\Column(type: "datetime")]
     private ?\DateTimeInterface $datePassage = null;
 
-    #[ORM\Column(type: "text")]
+    #[ORM\Column(type: "string", nullable: true)]
     private ?string $detailsCommentaire = null;
+
+    #[ORM\ManyToOne(inversedBy: 'animalEntities')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?HabitatEntity $habitatDeLAnimal = null;
+
+    //SET METHODE
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+    public function setRace(string $race): void
+    {
+        $this->race = $race;
+    }
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
+    }
+
+    /*public function setHabitat(HabitatEntity $habitat): void
+    {
+        $this->habitat = $habitat;
+    }*/
+    
+    public function setEtatAnimal(string $etatAnimal): void
+    {
+        $this->etatAnimal = $etatAnimal;
+    }
+    public function setnourritureType(?string $nourritureType): void
+    {
+        $this->nourritureType = $nourritureType;
+    }
+    public function setnourritureQuantite(?int $nourritureQuantite): void
+    {
+        $this->nourritureQuantite = $nourritureQuantite;
+    }
+    
+    public function setdatePassage(?\DateTimeInterface $datePassage): void
+    {
+        $this->datePassage = $datePassage;
+    }
+
+    public function setDetailsCommentaire (?string $detailsCommentaire): void
+    {
+        $this->detailsCommentaire = $detailsCommentaire;
+    }
+
+    // GET METHODE 
 
     public function getId(): ?int
     {
         return $this->id;
     }
-    public function createProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function getRace(): ?string
+    {
+        return $this->race;
+    }
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+    /*public function getHabitat(): ?HabitatEntity
+    {
+        return $this->habitat;
+    }    */
+    public function getEtatAnimal(): ?string
+    {
+        return $this->etatAnimal;
+    }
+    public function getNourritureType(): ?string
+    {
+        return $this->nourritureType;
+    }
+    public function getNourritureQuantite(): ?int
+    {
+        return $this->nourritureQuantite;
+    }
+    public function getDatePassage(): ?\DateTimeInterface
+    {
+        return $this->datePassage;
+    }
+    public function getDetailsCommentaire(): ?string
+    {
+        return $this->detailsCommentaire;
     }
 
-    public function readProperty($propertyName){
-        $getterMethod = 'get' . ucfirst($propertyName);
-        if (method_exists($this, $getterMethod)) {
-            return $this->$getterMethod();
-        }
-        return null;
+    public function __toString(): string
+    {
+        return $this->name; 
     }
 
-    public function updateProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function getHabitatDeLAnimal(): ?HabitatEntity
+    {
+        return $this->habitatDeLAnimal;
     }
 
-    public function deleteProperty($propertyName){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod(null);
-        }
-    }
+    public function setHabitatDeLAnimal(?HabitatEntity $habitatDeLAnimal): static
+    {
+        $this->habitatDeLAnimal = $habitatDeLAnimal;
 
+        return $this;
+    }
+    
 }

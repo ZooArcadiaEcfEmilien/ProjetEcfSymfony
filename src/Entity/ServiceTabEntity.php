@@ -25,36 +25,47 @@ class ServiceTabEntity
     #[ORM\Column(type:"text")]
     private ?string $serviceImage = null;
 
+    // GET Function
     public function getId(): ?int
     {
         return $this->id;
     }
-    public function createProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function getServiceNom(): string
+    {
+        return $this->serviceNom;
+    }
+    public function getServiceTitre(): string
+    { 
+        return $this->serviceTitre;
+    }
+    public function getServiceDescription(): string
+    {
+        return $this->serviceDescription;
+    }
+    public function getServiceImage(): string
+    {
+        return $this->serviceImage;
     }
 
-    public function readProperty($propertyName){
-        $getterMethod = 'get' . ucfirst($propertyName);
-        if (method_exists($this, $getterMethod)) {
-            return $this->$getterMethod();
-        }
-        return null;
+    // SET FUNCTION
+    public function setServiceNom(string $serviceNom): void
+    {   
+        $this->serviceNom = $serviceNom;
     }
 
-    public function updateProperty($propertyName, $propertyValue){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod($propertyValue);
-        }
+    public function setServiceTitre(string $serviceTitre): void
+    {
+        $this->serviceTitre = $serviceTitre;
     }
 
-    public function deleteProperty($propertyName){
-        $setterMethod = 'set' . ucfirst($propertyName);
-        if (method_exists($this, $setterMethod)) {
-            $this->$setterMethod(null);
-        }
+    public function setServiceDescription(string $serviceDescription): void
+    {
+        $this->serviceDescription = $serviceDescription;
     }
+
+    public function setServiceImage(?string $serviceImage): void
+    {
+        $this->serviceImage = $serviceImage;
+    }
+
 }

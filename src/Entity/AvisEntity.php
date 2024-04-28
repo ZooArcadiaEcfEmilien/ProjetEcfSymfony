@@ -25,6 +25,8 @@ class AvisEntity
     #[ORM\Column(type: "string", length: 255)]
     private $descriptionAvis;
 
+    // ajouter validation/refus de l'avis
+
     /* GET FUNCTION */
     public function getId(): ?int
     {
@@ -41,5 +43,19 @@ class AvisEntity
     public function getDescriptionAvis(): String
     {
         return $this->descriptionAvis;
+    }
+
+    // SET FUNCTION
+    public function setNombreEtoileAvis(int $nombreEtoileAvis): void
+    {
+        $this->nombreEtoileAvis = $nombreEtoileAvis;
+    }
+    public function setPseudoAvis(string $pseudoAvis): void
+    {
+        $this->pseudoAvis = $pseudoAvis;
+    }
+    public function setDescriptionAvis(string $descriptionAvis): void
+    {
+        $this->descriptionAvis = $descriptionAvis;
     }
 }

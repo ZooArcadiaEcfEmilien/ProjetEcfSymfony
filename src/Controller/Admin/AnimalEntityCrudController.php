@@ -4,7 +4,7 @@ namespace App\Controller\Admin;
 use App\Entity\AnimalEntity;
 use App\Entity\HabitatEntity;
 use Doctrine\ORM\EntityManagerInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -37,19 +37,9 @@ class AnimalEntityCrudController extends AbstractCrudController
             IntegerField::new('nourritureQuantite'),
             DateTimeField::new('datePassage'),
             TextField::new('detailsCommentaire'),
-           /* ChoiceField::new('habitat')
-                ->setChoices(function () {
-                    $habitats = $this->entityManager->getRepository(HabitatEntity::class)->findAll();
-                    $choices = [];
-                    foreach ($habitats as $habitat) {
-                        $choices[$habitat->getHabitatNom()] = $habitat; 
-                    }
-                    return $choices;
-                })
-                ->allowMultipleChoices(false)
-                ->autocomplete()
+            AssociationField::new('habitatDeLAnimal')
                 ->setRequired(true)
-        */
+        
         ];
     }
 }

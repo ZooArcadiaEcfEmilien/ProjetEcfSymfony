@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AvisEntityType extends AbstractType
 {
-   /* public function buildForm(FormBuilderInterface $builder, array $options): void
+   public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('nombreEtoileAvis')
@@ -23,5 +23,5 @@ class AvisEntityType extends AbstractType
         $resolver->setDefaults([
             'data_class' => AvisEntity::class,
         ]);
-    }*/
+    }
 }

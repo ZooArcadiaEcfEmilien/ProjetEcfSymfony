@@ -34,7 +34,7 @@ class FormulaireEntity {
     {
         return $this->id;
     }
-    /*
+
     public function getNomFormulaire(): string
     {
         return $this->nomFormulaire;
@@ -54,10 +54,26 @@ class FormulaireEntity {
     public function getSujetFormulaire(): string
     {
         return $this->sujetFormulaire;
-    }*/
+    }
     // SET FUNCTION
-    public function getNomFormulaire(string $nomFormulaire): void
+    public function setNomFormulaire(string $nomFormulaire): void
     {
         $this->nomFormulaire = $nomFormulaire;
+    }
+    public function setPrenomFormulaire (string $prenomFormulaire): void
+    {
+        $this->prenomFormulaire = $prenomFormulaire;
+    }
+    public function setAdresseMailFormulaire (string $adresseMailFormulaire): void
+    {
+        $this->adresseMailFormulaire = $adresseMailFormulaire;
+    }
+    public function setSujetFormulaire (string $sujetFormulaire): void
+    {
+        $this->sujetFormulaire = $sujetFormulaire;
+    }
+    public function setDescriptionFormulaire (string $descriptionFormulaire): void
+    {
+        $this->descriptionFormulaire = $descriptionFormulaire;
     }
 }

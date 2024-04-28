@@ -15,14 +15,18 @@ class FormulaireEntityCrudController extends AbstractCrudController
         return FormulaireEntity::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            IdField::new('id')->hideOnForm(),
+            TextField::new('nomFormulaire', 'Nom'),
+            TextField::new('prenomFormulaire', 'Prénom'),
+            TextField::new('adresseMailFormulaire', 'Adresse mail'),
+            TextField::new('sujetFormulaire', 'Sujet'),
+            TextEditorField::new('descriptionFormulaire', 'Votre demande'),
+
         ];
     }
-    */
+    
 }

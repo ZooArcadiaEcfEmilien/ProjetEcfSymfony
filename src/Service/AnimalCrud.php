@@ -14,23 +14,22 @@ class AnimalCrud
         $this->entityManager = $entityManager;
     }
 
-    public function addAnimal(string $name, string $race, HabitatEntity $habitat, \DateTime $dateTime, String $detailsCommentaire, string $etatAnimal, int $nourritureQuantite, string $nourritureType): void
+  /*  public function addAnimal(string $name, string $race, HabitatEntity $habitat, \DateTime $dateTime, ?String $detailsCommentaire, string $etatAnimal, int $nourritureQuantite, string $nourritureType): void
     {
         $animal = new AnimalEntity();
         $animal->setName($name);
         $animal->setRace($race);
-        $animal->setHabitat($habitat);
+        $animal->setHabitatNom($habitat);
         $animal->setdatePassage($dateTime);
-        $animal->setDetailCommentaire($detailsCommentaire);
+        $animal->setDetailsCommentaire($detailsCommentaire);
         $animal->setEtatAnimal($etatAnimal);
         $animal->setnourritureQuantite($nourritureQuantite);
         $animal->setnourritureType($nourritureType);
 
         $this->entityManager->persist($animal);
         $this->entityManager->flush();
-    }
+    }*/
 }
-
 
 
 

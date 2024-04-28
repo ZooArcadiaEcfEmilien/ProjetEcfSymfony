@@ -25,8 +25,9 @@ class AnimalEntity
     #[ORM\Column(type: "string")]
     private ?string $image = null;
 
-    #[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
-    private ?HabitatEntity $habitat;
+    /*#[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
+    #[ORM\JoinColumn(name: "habitat_id", referencedColumnName: "id")]
+    private ?HabitatEntity $habitat;*/
     
 
     #[ORM\Column(type: "string", length: 255)]
@@ -44,6 +45,10 @@ class AnimalEntity
     #[ORM\Column(type: "string", nullable: true)]
     private ?string $detailsCommentaire = null;
 
+    #[ORM\ManyToOne(inversedBy: 'animalEntities')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?HabitatEntity $habitatDeLAnimal = null;
+
     //SET METHODE
 
     public function setName(string $name): void
@@ -59,10 +64,10 @@ class AnimalEntity
         $this->image = $image;
     }
 
-    public function setHabitat(HabitatEntity $habitat): void
+    /*public function setHabitat(HabitatEntity $habitat): void
     {
         $this->habitat = $habitat;
-    }
+    }*/
     
     public function setEtatAnimal(string $etatAnimal): void
     {
@@ -106,10 +111,10 @@ class AnimalEntity
     {
         return $this->image;
     }
-    public function getHabitat(): ?HabitatEntity
+    /*public function getHabitat(): ?HabitatEntity
     {
         return $this->habitat;
-    }    
+    }    */
     public function getEtatAnimal(): ?string
     {
         return $this->etatAnimal;
@@ -134,6 +139,18 @@ class AnimalEntity
     public function __toString(): string
     {
         return $this->name; 
+    }
+
+    public function getHabitatDeLAnimal(): ?HabitatEntity
+    {
+        return $this->habitatDeLAnimal;
+    }
+
+    public function setHabitatDeLAnimal(?HabitatEntity $habitatDeLAnimal): static
+    {
+        $this->habitatDeLAnimal = $habitatDeLAnimal;
+
+        return $this;
     }
     
 }

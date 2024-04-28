@@ -32,7 +32,7 @@ class AvisEntity
     {
         return $this->id;
     }
-    /*public function getNombreEtoileAvis(): int
+    public function getNombreEtoileAvis(): int
     {
         return $this->nombreEtoileAvis;
     }
@@ -57,5 +57,5 @@ class AvisEntity
     public function setDescriptionAvis(string $descriptionAvis): void
     {
         $this->descriptionAvis = $descriptionAvis;
-    }*/
+    }
 }

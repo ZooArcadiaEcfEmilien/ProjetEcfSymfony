@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserTabEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Void_;
 
 #[ORM\Entity(repositoryClass: UserTabEntityRepository::class)]
 #[ORM\Table(name:"user")]
@@ -35,7 +36,7 @@ class UserTabEntity
     {
         return $this->userType;
     }
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -46,6 +47,26 @@ class UserTabEntity
     public function getUserName(): ?string
     {
         return $this->userName;
+    }
+
+    // SET FUNCTION
+
+    public function setUserType(string $userType): void 
+    {
+        $this->userType = $userType;
+    }
+
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+    public function setMail(string $mail): void
+    {
+        $this->mail = $mail;
+    }
+    public function setUserName(string $userName): void
+    {
+        $this->userName = $userName;
     }
 
 }

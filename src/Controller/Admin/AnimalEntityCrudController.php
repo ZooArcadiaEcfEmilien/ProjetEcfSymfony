@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+
 
 class AnimalEntityCrudController extends AbstractCrudController
 {
@@ -33,7 +35,7 @@ class AnimalEntityCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('name', 'Nom'),
             TextField::new('race', 'Race'),
-            TextField::new('image'),
+            ImageField::new('image', 'Insérer une image')->setUploadDir('/public/uploads/images/Animal')->setBasePath('/uploads/images/Animal'),
             AssociationField::new('habitatDeLAnimal', 'Choix de l\'habitat de l\'animal')
             ->setRequired(true),
 

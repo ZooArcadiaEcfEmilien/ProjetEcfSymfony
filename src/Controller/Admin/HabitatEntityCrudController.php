@@ -6,10 +6,9 @@ use App\Entity\HabitatEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use App\Form\HabitatEntityType; // Import du formulaire HabitatEntityType
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 
 
 
@@ -23,25 +22,19 @@ class HabitatEntityCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-        // Retourner les champs à afficher dans le formulaire d'édition et de création
         return [
-            IdField::new('id')->hideOnForm(), // Masquer l'ID dans le formulaire
-            // Utilisation des champs définis dans HabitatEntityType
+            IdField::new('id')->hideOnForm(), 
             TextField::new('habitatNom', 'Habitat'),
             TextField::new('habitatDescription', 'Description'),
             TextField::new('habitatImage', 'Image'),
-            AssociationField::new('animalEntities')
-           // ->hideOnForm() // Vous pouvez cacher le champ dans le formulaire d'édition de l'habitat
-            ->setLabel('Animaux') // Étiquette du champ
+            ArrayField::new('animalEntities')->hideOnForm()
         ];
     }
 
-        public function configureActions(Actions $actions): Actions
-        {
-            return $actions
-                ->add(Crud::PAGE_DETAIL, 'detail');
-        }
-        
-
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_DETAIL, 'detail');
+    }
 }
 

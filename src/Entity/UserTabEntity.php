@@ -27,6 +27,8 @@ class UserTabEntity
 
     #[ORM\Column(type:"string")]
     private $mail;
+    
+    //  METHODES 
 
     public function getId(): ?int
     {
@@ -48,8 +50,6 @@ class UserTabEntity
     {
         return $this->userName;
     }
-
-    // SET FUNCTION
 
     public function setUserType(string $userType): void 
     {

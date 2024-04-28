@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+
 
 class FormulaireEntityCrudController extends AbstractCrudController
 {
@@ -22,7 +24,7 @@ class FormulaireEntityCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('nomFormulaire', 'Nom'),
             TextField::new('prenomFormulaire', 'Prénom'),
-            TextField::new('adresseMailFormulaire', 'Adresse mail'),
+            EmailField::new('adresseMailFormulaire', 'Adresse mail'),
             TextField::new('sujetFormulaire', 'Sujet'),
             TextEditorField::new('descriptionFormulaire', 'Votre demande'),
 

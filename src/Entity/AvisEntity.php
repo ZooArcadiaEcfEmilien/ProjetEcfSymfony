@@ -32,8 +32,7 @@ class AvisEntity
     private ?bool $validationAvis = null;
 
 
-
-    /* GET FUNCTION */
+    // METHODES
     public function getId(): ?int
     {
         return $this->id;
@@ -51,7 +50,6 @@ class AvisEntity
         return $this->descriptionAvis;
     }
 
-    // SET FUNCTION
     public function setNombreEtoileAvis(int $nombreEtoileAvis): void
     {
         $this->nombreEtoileAvis = $nombreEtoileAvis;

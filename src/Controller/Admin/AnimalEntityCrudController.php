@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 use App\Entity\AnimalEntity;
-use App\Entity\HabitatEntity;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
@@ -25,12 +24,12 @@ class AnimalEntityCrudController extends AbstractCrudController
     {
         $this->entityManager = $entityManager;
     }
-    // La fonction configureFields est utilisée pour configurer l'affichage des champs de l'entité AnimalEntity dans l'interface d'administration EasyAdmin.
-    // Elle détermine quels champs seront visibles dans la vue CRUD et leurs configurations spécifiques, comme les choix pour les champs liés à d'autres entités.
+
     public function configureFields(string $pageName): iterable
     {
         return [
             FormField::addTab('Présentation','fa-solid fa-paw'),
+
             IdField::new('id')->hideOnForm(),
             TextField::new('name', 'Nom'),
             TextField::new('race', 'Race'),
@@ -39,6 +38,7 @@ class AnimalEntityCrudController extends AbstractCrudController
             ->setRequired(true),
 
             FormField::addTab('Santé de l\'animal', 'fa-solid fa-user-doctor'),
+
             TextField::new('etatAnimal', 'Etat de l\'animal'),
             TextField::new('nourritureType', 'Nourriture Type/préférée'),
             IntegerField::new('nourritureQuantite', 'Quantité de nourriture en Gramme'),

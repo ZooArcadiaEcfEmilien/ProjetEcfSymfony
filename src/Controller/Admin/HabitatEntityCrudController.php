@@ -9,12 +9,16 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
-
-
-
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class HabitatEntityCrudController extends AbstractCrudController
 {
+    public function configureActions(Actions $actions): Actions{
+
+        $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
+        return $actions;
+    }
     public static function getEntityFqcn(): string
     {
         return HabitatEntity::class;
@@ -26,15 +30,9 @@ class HabitatEntityCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(), 
             TextField::new('habitatNom', 'Habitat'),
             TextField::new('habitatDescription', 'Description'),
-            TextField::new('habitatImage', 'Image'),
+            ImageField::new('habitatImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Habitats')->setBasePath('/uploads/images/Habitats'),
             ArrayField::new('animalEntities')->hideOnForm()
         ];
-    }
-
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions
-            ->add(Crud::PAGE_DETAIL, 'detail');
     }
 }
 

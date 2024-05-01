@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\UserTabEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Void_;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserTabEntityRepository::class)]
 #[ORM\Table(name:"user")]
@@ -22,11 +24,13 @@ class UserTabEntity
     #[ORM\Column(type:"string")]
     private $userName;
 
-    #[ORM\Column(type:"string")]
-    private $password;
+    #[ORM\Column(type:"string", length:255)]
+    private string $password;
 
     #[ORM\Column(type:"string")]
     private $mail;
+
+    //  METHODES 
 
     public function getId(): ?int
     {
@@ -48,8 +52,6 @@ class UserTabEntity
     {
         return $this->userName;
     }
-
-    // SET FUNCTION
 
     public function setUserType(string $userType): void 
     {

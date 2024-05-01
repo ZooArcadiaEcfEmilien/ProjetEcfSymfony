@@ -28,8 +28,7 @@ class FormulaireEntity {
     #[ORM\Column(type:"string")]
     private $descriptionFormulaire;
 
-        /* GET FUNCTION */
-
+    // METHODES
     public function getId(): ?int
     {
         return $this->id;
@@ -55,7 +54,6 @@ class FormulaireEntity {
     {
         return $this->sujetFormulaire;
     }
-    // SET FUNCTION
     public function setNomFormulaire(string $nomFormulaire): void
     {
         $this->nomFormulaire = $nomFormulaire;

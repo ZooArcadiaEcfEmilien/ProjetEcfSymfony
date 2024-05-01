@@ -29,7 +29,7 @@ class AvisEntity
     private $descriptionAvis;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $validationAvis = null;
+    private ?bool $validationAvis = false;
 
 
     // METHODES

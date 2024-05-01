@@ -12,9 +12,29 @@
         </p>
     </div>
     <div class="carrousselImageAccueil"></div>
-    <div class="CustomerReviews"></div>
+    <div class="CustomerReviews">
+        <h2>Avis des clients</h2>
+        <div class="avis-container">
+            {% for avi in avis %}
+                <div class="avis">
+                    <p>{{ avi.pseudoAvis }}</p>
+                    <p>{{ avi.nombreEtoileAvis }} étoiles</p>
+                    <p>{{ avi.descriptionAvis }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="nouvelAvis">
+        <h2>Rédiger un avis</h2>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }} {# Utilisez cette ligne pour afficher tous les champs du formulaire #}
+        {{ form_end(form) }}
+
+    </div>
+
     <div class="horairesOuverture">
-    
         <p>Nos horaires d'ouverture : <br>
             Lundi Mardi Jeudi : 9h30 - 17h30 / Mercredi & Vendredi : 9h00 - 18h00 / Samedi & Dimanche : 9h00 - 19h00
         </p>
@@ -22,5 +42,3 @@
 {% endblock %}
 
 {% include 'BasDePage.html.twig' %}
-
-

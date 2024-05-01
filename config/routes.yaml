@@ -4,3 +4,8 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+# routes.yaml
+app_accueil:
+    path: /accueil
+    controller: App\Controller\AccueilController::index
+    methods: ['GET', 'POST'] # Autoriser les méthodes GET et POST pour cette route

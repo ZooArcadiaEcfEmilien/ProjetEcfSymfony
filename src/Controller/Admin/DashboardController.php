@@ -7,7 +7,6 @@ use App\Entity\AvisEntity;
 use App\Entity\FormulaireEntity;
 use App\Entity\HabitatEntity;
 use App\Entity\ServiceTabEntity;
-use App\Entity\Statistique;
 use App\Entity\StatistiqueEntity;
 use App\Entity\UserAccesEntity;
 use App\Entity\UserTabEntity;

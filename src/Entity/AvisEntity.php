@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\AvisEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: AvisEntityRepository::class)]
 #[ORM\Table(name: "avis")]
@@ -17,6 +19,7 @@ class AvisEntity
     private ?int $id = null;
 
     #[ORM\Column(type: "integer", length: 1)]
+    #[Assert\Range(min: 1, max: 5)]
     private $nombreEtoileAvis;
 
     #[ORM\Column(type: "string", length: 255)]
@@ -25,9 +28,11 @@ class AvisEntity
     #[ORM\Column(type: "string", length: 255)]
     private $descriptionAvis;
 
-    // ajouter validation/refus de l'avis
+    #[ORM\Column(nullable: true)]
+    private ?bool $validationAvis = null;
 
-    /* GET FUNCTION */
+
+    // METHODES
     public function getId(): ?int
     {
         return $this->id;
@@ -45,7 +50,6 @@ class AvisEntity
         return $this->descriptionAvis;
     }
 
-    // SET FUNCTION
     public function setNombreEtoileAvis(int $nombreEtoileAvis): void
     {
         $this->nombreEtoileAvis = $nombreEtoileAvis;
@@ -57,5 +61,17 @@ class AvisEntity
     public function setDescriptionAvis(string $descriptionAvis): void
     {
         $this->descriptionAvis = $descriptionAvis;
+    }
+
+    public function isValidationAvis(): ?bool
+    {
+        return $this->validationAvis;
+    }
+
+    public function setValidationAvis(?bool $validationAvis): static
+    {
+        $this->validationAvis = $validationAvis;
+
+        return $this;
     }
 }

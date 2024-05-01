@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
-use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Text;
 
 #[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
 #[ORM\Table(name: "animal")]
@@ -24,12 +23,7 @@ class AnimalEntity
 
     #[ORM\Column(type: "string")]
     private ?string $image = null;
-
-    /*#[ORM\ManyToOne(targetEntity: HabitatEntity::class, inversedBy: 'animaux')]
-    #[ORM\JoinColumn(name: "habitat_id", referencedColumnName: "id")]
-    private ?HabitatEntity $habitat;*/
     
-
     #[ORM\Column(type: "string", length: 255)]
     private ?string $etatAnimal = null;
 
@@ -49,7 +43,7 @@ class AnimalEntity
     #[ORM\JoinColumn(nullable: false)]
     private ?HabitatEntity $habitatDeLAnimal = null;
 
-    //SET METHODE
+    // METHODES
 
     public function setName(string $name): void
     {
@@ -64,11 +58,6 @@ class AnimalEntity
         $this->image = $image;
     }
 
-    /*public function setHabitat(HabitatEntity $habitat): void
-    {
-        $this->habitat = $habitat;
-    }*/
-    
     public function setEtatAnimal(string $etatAnimal): void
     {
         $this->etatAnimal = $etatAnimal;
@@ -92,8 +81,6 @@ class AnimalEntity
         $this->detailsCommentaire = $detailsCommentaire;
     }
 
-    // GET METHODE 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -111,10 +98,7 @@ class AnimalEntity
     {
         return $this->image;
     }
-    /*public function getHabitat(): ?HabitatEntity
-    {
-        return $this->habitat;
-    }    */
+
     public function getEtatAnimal(): ?string
     {
         return $this->etatAnimal;

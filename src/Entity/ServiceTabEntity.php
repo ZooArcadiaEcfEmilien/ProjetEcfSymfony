@@ -25,7 +25,7 @@ class ServiceTabEntity
     #[ORM\Column(type:"text")]
     private ?string $serviceImage = null;
 
-    // GET Function
+    // METHODES
     public function getId(): ?int
     {
         return $this->id;

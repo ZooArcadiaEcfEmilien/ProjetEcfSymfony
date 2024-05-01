@@ -4,7 +4,7 @@ body {
     margin: 0;
     background-color: rgb(74, 114, 40);
     color: white;
-   background-image: url("/ZooArcadiaEcfProject/ASSETS/Photo/fond.jpeg");
+    background-image: url("/uploads/images/Commun/fond.jpeg");
     background-size: cover; 
     display: flex;
     flex-direction: column;

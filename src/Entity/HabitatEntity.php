@@ -37,14 +37,6 @@ class HabitatEntity
         $this->animalEntities = new ArrayCollection();
     }
 
-   /* #[ORM\OneToMany(mappedBy: 'habitat', targetEntity: AnimalEntity::class)]
-    private Collection $animaux;
-
-    public function __construct()
-    {
-        $this->animaux = new ArrayCollection();
-    }*/
-
     public function getId(): ?int
     {
         return $this->id;
@@ -69,16 +61,6 @@ class HabitatEntity
     {
         $this->habitatDescription = $habitatDescription;
     }
-
-   /* public function getAnimaux(): Collection
-    {
-        return $this->animaux;
-    }*/
-
-    /*public function setAnimaux(Collection $animaux): void
-    {
-        $this->animaux = $animaux;
-    }*/
 
     public function getHabitatImage(): ?string
     {

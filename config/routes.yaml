@@ -4,8 +4,14 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-# routes.yaml
 app_accueil:
     path: /accueil
     controller: App\Controller\AccueilController::index
-    methods: ['GET', 'POST'] # Autoriser les méthodes GET et POST pour cette route
+    methods: ['GET', 'POST'] # Autorise les méthodes GET et POST pour cette route
+
+app_formulaire:
+    path: /formulaire
+    controller: App\Controller\FormulaireController::index
+    methods: ['GET', 'POST']
+
+

@@ -29,10 +29,10 @@ class UserTabEntityCrudController extends AbstractCrudController
         return [
             ChoiceField::new('userType')
             ->setChoices([
-                'Employé' => 'option1',
-                'Vétérinaire' => 'option2',
-                'Intérimaire/Stagiaire' => 'option3',
-                'Admin' => 'option4',
+                'Employé' => 'Employé',
+                'Vétérinaire' => 'Vétérinaire',
+                'Intérimaire/Stagiaire' => 'Intérimaire/Stagiaire',
+                'Admin' => 'Admin',
 
             ])
             ->setFormType(ChoiceType::class),            

@@ -32,9 +32,9 @@ class AvisEntityCrudController extends AbstractCrudController
     {
         return [
             BooleanField::new('validationAvis', 'Valider l\'avis ?'),
-            IntegerField::new('nombreEtoileAvis'),
-            TextField::new('pseudoAvis'),
-            TextEditorField::new('descriptionAvis'),
+            IntegerField::new('nombreEtoileAvis', 'Nombre d\'étoile'),
+            TextField::new('pseudoAvis','Pseudo'),
+            TextEditorField::new('descriptionAvis','Description'),
         ];
     }
     

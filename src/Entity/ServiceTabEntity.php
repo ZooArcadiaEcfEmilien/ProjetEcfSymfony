@@ -44,7 +44,7 @@ class ServiceTabEntity
     }
     public function getServiceImage(): string
     {
-        return 'uploads/images/Services/' . $this->serviceImage;
+        return $this->serviceImage;
     }
 
     // SET FUNCTION
@@ -65,7 +65,8 @@ class ServiceTabEntity
 
     public function setServiceImage(?string $serviceImage): void
     {
-        $this->serviceImage = $serviceImage;
+        $this->serviceImage = '/uploads/images/Services/' . $serviceImage;
     }
+    
 
 }

@@ -30,7 +30,7 @@ class ServiceTabEntityCrudController extends AbstractCrudController
             TextField::new('serviceNom','Nom du service'),
             TextField::new('serviceTitre', 'Titre choisi pour le site'),
             TextEditorField::new('serviceDescription', 'Description du service'),
-            ImageField::new('serviceImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Services')->setBasePath('/uploads/images/Services'),
+            ImageField::new('serviceImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Services'),
         ];
     }
 }

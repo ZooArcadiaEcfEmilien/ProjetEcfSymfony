@@ -36,7 +36,7 @@ class AnimalEntity
     #[ORM\Column(type: "datetime")]
     private ?\DateTimeInterface $datePassage = null;
 
-    #[ORM\Column(type: "string", nullable: true)]
+    #[ORM\Column(type: "text", nullable: true)]
     private ?string $detailsCommentaire = null;
 
     #[ORM\ManyToOne(inversedBy: 'animalEntities')]

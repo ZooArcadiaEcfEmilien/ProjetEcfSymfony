@@ -19,7 +19,7 @@ class ServiceTabEntity
     #[ORM\Column(type:"string")]
     private $serviceTitre;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type:"text")]
     private $serviceDescription;
 
     #[ORM\Column(type:"text")]
@@ -44,7 +44,7 @@ class ServiceTabEntity
     }
     public function getServiceImage(): string
     {
-        return $this->serviceImage;
+        return 'uploads/images/Services/' . $this->serviceImage;
     }
 
     // SET FUNCTION

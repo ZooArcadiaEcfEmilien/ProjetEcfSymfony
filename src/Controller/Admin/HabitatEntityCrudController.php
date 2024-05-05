@@ -30,7 +30,7 @@ class HabitatEntityCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(), 
             TextField::new('habitatNom', 'Habitat'),
             TextField::new('habitatDescription', 'Description'),
-            ImageField::new('habitatImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Habitats')->setBasePath('/uploads/images/Habitats'),
+            ImageField::new('habitatImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Habitats'),
             ArrayField::new('animalEntities')->hideOnForm()
         ];
     }

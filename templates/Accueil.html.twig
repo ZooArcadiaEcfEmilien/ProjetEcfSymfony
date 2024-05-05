@@ -11,10 +11,46 @@
             Nous accordons également une grande importance au bien-être de chaque espèce, c'est pourquoi plusieurs vétérinaires vérifient chaque jour l'état de santé de nos hôtes, vous pourrez retrouver le suivi en temps réel de chacun d'entre eux !
         </p>
     </div>
-    <div class="carrousselImageAccueil"></div>
-    <div class="CustomerReviews"></div>
+    <h2> Les avis de nos visiteurs </h2>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            
+            <div class="carousel-inner">
+                {% for avi in avis %}
+                    <div class="carousel-item {% if loop.first %} active {% endif %}">
+                        <div class="avis">
+                            <p>{{ avi.pseudoAvis }}</p>
+                            <p>{{ avi.nombreEtoileAvis }} étoiles</p>
+                            <p>{{ avi.descriptionAvis }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+
+        <h2>Rédiger un avis</h2>
+
+    <div class="nouvelAvis">
+
+        {{ form_start(form) }}
+        {{ form_row(form.pseudoAvis, {'label': 'Votre pseudo'}) }}
+        {{ form_row(form.nombreEtoileAvis, {'label': 'Nombre d\'étoiles'}) }}
+        {{ form_row(form.descriptionAvis, {'label': 'Description'}) }}
+        {{ form_end(form) }}
+
+    </div>
+
     <div class="horairesOuverture">
-    
         <p>Nos horaires d'ouverture : <br>
             Lundi Mardi Jeudi : 9h30 - 17h30 / Mercredi & Vendredi : 9h00 - 18h00 / Samedi & Dimanche : 9h00 - 19h00
         </p>
@@ -22,5 +58,4 @@
 {% endblock %}
 
 {% include 'BasDePage.html.twig' %}
-
 

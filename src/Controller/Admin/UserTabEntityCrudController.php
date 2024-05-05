@@ -9,10 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -33,10 +29,10 @@ class UserTabEntityCrudController extends AbstractCrudController
         return [
             ChoiceField::new('userType')
             ->setChoices([
-                'Employé' => 'option1',
-                'Vétérinaire' => 'option2',
-                'Intérimaire/Stagiaire' => 'option3',
-                'Admin' => 'option4',
+                'Employé' => 'Employé',
+                'Vétérinaire' => 'Vétérinaire',
+                'Intérimaire/Stagiaire' => 'Intérimaire/Stagiaire',
+                'Admin' => 'Admin',
 
             ])
             ->setFormType(ChoiceType::class),            

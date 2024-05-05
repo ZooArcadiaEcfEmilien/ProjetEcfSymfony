@@ -1,6 +1,29 @@
 @media only screen and (min-width: 901px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
 
+    .habitats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .habitat {
+        width: 45%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .habitat h2 {
+        margin-top: 0;
+    }
+    
+    .habitat img {
+        max-width: 100%;
+        height: auto;
+    }
+    
 
 .banderolePub{
     height: 5%;
@@ -9,15 +32,7 @@
     justify-content: space-around;
     align-items: center;
 }
-.contentAll{
-    height: 75%;
-    width: 100%;
-    height: 75%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+
 nav {
     display: flex;
     background-color: rgba(54, 85, 28, 0.693);
@@ -31,12 +46,6 @@ nav a {
     flex: 1; 
     text-align: center;
     padding: 10px; 
-}
-
-h1{
-    content: " Nos différents habitats ";
-    text-align: center;
-
 }
 
 footer {
@@ -63,24 +72,5 @@ footer {
     text-align: center;
 }
 
-.habitatSpe{
-    display: flex;
-    margin: 1%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.habitatsGeneral{
-    width: auto;
-    height: 45%;
-    margin: 0.5%;
-    display: flex;
-    justify-content: space-evenly;
-
-}
-.habitatSpe img {
-    height: 100%;
-    width: 100%;
-}
 }

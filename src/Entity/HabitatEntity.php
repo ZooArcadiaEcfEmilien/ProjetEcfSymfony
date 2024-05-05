@@ -23,7 +23,7 @@ class HabitatEntity
     #[ORM\Column(type:"text")]
     private $habitatDescription;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type:"text")]
     private ?string $habitatImage = null;
 
     /**
@@ -67,10 +67,11 @@ class HabitatEntity
         return $this->habitatImage;
     }
 
-    public function setHabitatImage(string $habitatImage): void
+    public function setHabitatImage(?string $habitatImage): void
     {
-        $this->habitatImage = $habitatImage;
+        $this->habitatImage = '/uploads/images/Habitats/' . $habitatImage;
     }
+    
     public function __toString(): string
     {
         return $this->habitatNom; 
@@ -97,7 +98,6 @@ class HabitatEntity
     public function removeAnimalEntity(AnimalEntity $animalEntity): static
     {
         if ($this->animalEntities->removeElement($animalEntity)) {
-            // set the owning side to null (unless already changed)
             if ($animalEntity->getHabitatDeLAnimal() === $this) {
                 $animalEntity->setHabitatDeLAnimal(null);
             }

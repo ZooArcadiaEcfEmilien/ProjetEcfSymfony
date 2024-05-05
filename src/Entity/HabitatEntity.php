@@ -20,7 +20,7 @@ class HabitatEntity
     #[ORM\Column(type:"string")]
     private $habitatNom;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type:"text")]
     private $habitatDescription;
 
     #[ORM\Column(type:"string")]

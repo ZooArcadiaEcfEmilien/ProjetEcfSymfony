@@ -25,11 +25,11 @@ class AvisEntity
     #[ORM\Column(type: "string", length: 255)]
     private $pseudoAvis;
 
-    #[ORM\Column(type: "string", length: 255)]
+    #[ORM\Column(type: "text", length: 450)]
     private $descriptionAvis;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $validationAvis = null;
+    private ?bool $validationAvis = false;
 
 
     // METHODES

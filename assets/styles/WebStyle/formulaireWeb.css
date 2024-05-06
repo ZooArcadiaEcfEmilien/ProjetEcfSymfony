@@ -46,9 +46,11 @@
       margin: 0 10px;
       
   }
-  
+#forumlaire_entity{
+  width: 70vh;
+}
   form {
-      max-width: 40%;
+      max-width: 80%;
       margin: auto;
       height: 70%;
       background-color: #586c3f99;
@@ -63,6 +65,7 @@
     label {
       display: block;
       margin-bottom: 5px;
+      text-align: center;
     }
   
     input, textarea {
@@ -87,6 +90,7 @@
     button:hover {
       background-color: #45a049;
     }
+    /*
     .label1 {
       display: flex;
       width: 100%;
@@ -102,5 +106,5 @@
       align-items: center;
       width: 50%;
       margin: 1%;
-    }
+    }*/
   }

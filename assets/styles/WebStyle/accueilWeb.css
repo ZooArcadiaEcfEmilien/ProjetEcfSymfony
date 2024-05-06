@@ -39,7 +39,8 @@ h2{
 }
 .nouvelAvis{
     max-width: 100%;
-    width: 50%;
+    width: 70%;
+    margin: 0 auto;
 }
 .carousel-control-next{
     background-color: rgba(54, 85, 28, 0.693);
@@ -49,9 +50,6 @@ h2{
 .carousel-control-prev{
     background-color: rgba(54, 85, 28, 0.693);
 
-}
-.nouvelAvis{
-    width: 100%;
 }
 nav {
     display: flex;

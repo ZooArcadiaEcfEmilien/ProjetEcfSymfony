@@ -55,26 +55,6 @@ nav a {
     padding: 10px; 
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1%;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: 2%;
-}
-.footer-links {
-    display: flex;
-    padding: initial;
-    justify-content: space-evenly;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    
-}
 .horairesOuverture {
     text-align: center;
 }

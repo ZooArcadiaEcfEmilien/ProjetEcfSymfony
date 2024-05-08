@@ -4,14 +4,12 @@ namespace App\Entity;
 
 use App\Repository\UserTabEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
-use phpDocumentor\Reflection\Types\Void_;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserTabEntityRepository::class)]
 #[ORM\Table(name:"user")]
 
-class UserTabEntity 
+class UserTabEntity implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -62,7 +60,7 @@ class UserTabEntity
     {
         $this->password = $password;
     }
-    public function setMail(string $mail): void
+    public function setMail(string $mail)
     {
         $this->mail = $mail;
     }
@@ -71,4 +69,24 @@ class UserTabEntity
         $this->userName = $userName;
     }
 
+    // Implémentation des méthodes de UserInterface
+    public function eraseCredentials(): void
+    {
+        // Cette méthode est inutile dans notre cas, car nous n'avons rien à effacer.
+        // Mais elle est requise par l'interface UserInterface.
+    }
+
+    public function getRoles(): array
+    {
+        // Retourne les rôles de l'utilisateur.
+        // Dans notre cas, nous n'utilisons pas de rôles, donc nous retournons un tableau vide.
+        return [];
+    }
+
+    public function getUserIdentifier(): string
+    {
+        // Retourne l'identifiant de l'utilisateur.
+        // Dans notre cas, nous utilisons l'identifiant de l'utilisateur comme identifiant unique.
+        return $this->getMail();
+    }
 }

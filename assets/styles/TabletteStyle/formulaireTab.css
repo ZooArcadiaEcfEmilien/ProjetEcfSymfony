@@ -4,9 +4,11 @@
     .element-a-cacher {
         display: none;
     }
+
     .introduction{
         text-align: center;
     }
+
     .nav-container {
         text-align: center;
     }
@@ -14,7 +16,6 @@
     .menu-btn {
         display: block;
         background-color: #07522F;
-
         border: none;
         border-radius: 5px;
         width: 17%;
@@ -22,6 +23,7 @@
         font-family: fantasy;
         font-size: 100%;
     }
+
     .menu-btn:hover{
         background-color: #309f50;
     } 
@@ -44,12 +46,13 @@
         padding: 10px;
         text-decoration: none;
         color: #ffffff;
-
         font-weight: bold;
     }
+
     h1::before{
         content: "Zoo Arcadia";
     }
+
     .menuTitreMobile{
         display: flex;
         background-color: #07522F;
@@ -59,9 +62,9 @@
     h1 {
         margin-left: 13%;
     }
-    h2::before{
+    /*h2::before{
         content: "Formulaire de contact";
-    }
+    }*/
     h2{
         text-align: center;
     }

@@ -26,26 +26,7 @@
         text-align: center;
         padding: 10px; 
     }
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 1%;
-      text-align: center;
-      position: relative;
-      width: 100%;
-      height: 2%;
-  }
-  .footer-links {
-      display: flex;
-      padding: initial;
-      justify-content: space-evenly;
-  }
-  .footer-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      
-  }
+
 #forumlaire_entity{
   width: 70vh;
 }
@@ -60,6 +41,9 @@
       flex-direction: column;
       justify-content: space-evenly;
       margin-bottom: 2%;
+      height: 70vh;
+      margin-bottom: 10vh;
+
     }
   
     label {
@@ -90,21 +74,5 @@
     button:hover {
       background-color: #45a049;
     }
-    /*
-    .label1 {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-evenly;
-    }
-    #description {
-      height: 40%;
-    }
-    .label2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      margin: 1%;
-    }*/
+
   }

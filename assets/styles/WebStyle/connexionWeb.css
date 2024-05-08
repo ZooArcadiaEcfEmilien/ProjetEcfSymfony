@@ -26,25 +26,6 @@
         text-align: center;
         padding: 10px; 
     }
-    footer {
-        background-color: #333;
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        margin-block-start: auto;
-    }
-    .footer-links {
-        display: flex;
-        padding: initial;
-        justify-content: space-evenly;
-    }
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-        
-    }
 
 /*FORMULAIRE DE CONTACT*/
 h1 {
@@ -54,6 +35,7 @@ h1 {
 .login-container {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 15vh;
 }
 
 .form-group {

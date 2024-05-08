@@ -4,15 +4,21 @@
     .habitats {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
     
     .habitat {
-        width: 45%;
+        width: 35%;
         margin-bottom: 20px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.38);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
     }
     
     .habitat h2 {
@@ -22,6 +28,7 @@
     .habitat img {
         max-width: 100%;
         height: auto;
+        width: 60%;
     }
     
 
@@ -48,26 +55,6 @@ nav a {
     padding: 10px; 
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1%;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: 2%;
-}
-.footer-links {
-    display: flex;
-    padding: initial;
-    justify-content: space-evenly;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    
-}
 .horairesOuverture {
     text-align: center;
 }

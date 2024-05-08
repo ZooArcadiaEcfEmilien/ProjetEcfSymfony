@@ -59,9 +59,9 @@
     h1 {
         margin-left: 13%;
     }
-    h2::before{
+    /*h2::before{
         content: "Formulaire de contact";
-    }
+    }*/
     h2{
         text-align: center;
     }

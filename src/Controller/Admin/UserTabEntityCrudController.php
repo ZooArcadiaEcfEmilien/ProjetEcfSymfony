@@ -27,15 +27,15 @@ class UserTabEntityCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ChoiceField::new('userType')
+            ChoiceField::new('roles')
             ->setChoices([
-                'Employé' => 'Employé',
-                'Vétérinaire' => 'Vétérinaire',
-                'Intérimaire/Stagiaire' => 'Intérimaire/Stagiaire',
-                'Admin' => 'Admin',
-
+                'Utilisateur' => 'ROLE_USER',
+                'Administrateur' => 'ROLE_ADMIN',
+                // Ajoutez d'autres rôles si nécessaire
             ])
-            ->setFormType(ChoiceType::class),            
+            ->allowMultipleChoices()
+            ->setRequired(true)
+            ->setLabel('Rôles'),   
             
             TextField::new('password')
                 ->setFormType(PasswordType::class),
@@ -43,4 +43,5 @@ class UserTabEntityCrudController extends AbstractCrudController
             EmailField::new('mail'),
         ];
     }
+    
 }

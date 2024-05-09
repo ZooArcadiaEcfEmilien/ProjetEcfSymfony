@@ -14,4 +14,7 @@ app_formulaire:
     controller: App\Controller\FormulaireController::index
     methods: ['GET', 'POST']
 
-
+app_connexion:
+    path: /connexion
+    controller: App\Controller\ConnexionController::index
+    methods: ['GET', 'POST']

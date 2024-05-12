@@ -19,6 +19,7 @@ security:
                 default_target_path: admin # Redirige vers la page admin après la connexion
                 always_use_default_target_path: true
                 failure_path: app_connexion
+                enable_csrf: true
             logout:
                 #path: app_connexion # Chemin vers la route de déconnexion distincte
                 target: app_accueil # Redirige vers la page de connexion après la déconnexion

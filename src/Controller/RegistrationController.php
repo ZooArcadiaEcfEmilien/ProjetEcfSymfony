@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\UserTabEntity;
 use App\Form\RegistrationFormType;
+use App\Repository\UserTabEntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -14,7 +15,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class RegistrationController extends AbstractController
 {
-    #[Route('/register', name: 'app_register')]
+    /*#[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
         $user = new UserTabEntity();
@@ -42,4 +43,12 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form,
         ]);
     }
+      /*  public function index(UserTabEntityRepository $userRespository): Response
+    {
+        $users = $userRespository->findAll();
+
+        return $this->render('@easy_admin/new.html.twig', [
+            'users' => $users,
+        ]);
+    }*/
 }

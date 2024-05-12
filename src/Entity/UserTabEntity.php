@@ -22,7 +22,9 @@ class UserTabEntity implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type:"string")]
     private $userName;
-
+    /**
+     * @return string the hashed password for this user
+     */
     #[ORM\Column(type:"string", length:255)]
     private string $password;
 

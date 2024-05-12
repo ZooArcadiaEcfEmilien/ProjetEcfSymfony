@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
 
+
 class AvisEntityCrudController extends AbstractCrudController
 {
     public function configureActions(Actions $actions): Actions{

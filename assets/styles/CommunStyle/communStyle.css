@@ -1,5 +1,5 @@
 body {
-    /*height: 100vh;*/
+    height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: rgb(74, 114, 40);
@@ -10,32 +10,24 @@ body {
     flex-direction: column;
 
 }
+@media only screen and (max-width: 900px) {
+    /* Vos styles existants pour les écrans de petite taille */
+
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+}
+
 @media only screen and (min-width: 901px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
 
 .menu-btn {
     display: none;
 }
-
-footer {
-    background-color: #000000;
-    color: white;
-    position: relative;
-    min-height: 3vh;
-
-}
-.footer-links {
-    display: flex;
-    justify-content: space-evenly;
-
-    bottom: 0;
-    width: 100%;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    
 }
 
 /* ANIMAL_LIST */
@@ -44,22 +36,41 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    align-content: center;
+
 }
 .animal {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-}
-.animal p{
-    display: flex;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.656);
+    margin-bottom: 1%;
     align-items: center;
-    justify-content: center;
 }
-
+.animal div{
+    text-align: center;
+}
 .animal img{
     width: 30%;
-    display: flex;
-    margin: 0 auto;
+    margin-bottom: 1%;
 }
 
+/*FOOTER*/
+footer {
+    background-color: #000000;
+    min-height: 3vh;
+    display: flex;
+    align-items: center;
+
+}
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
 }

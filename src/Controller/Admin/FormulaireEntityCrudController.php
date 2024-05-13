@@ -25,7 +25,6 @@ class FormulaireEntityCrudController extends AbstractCrudController
     {
         return FormulaireEntity::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {

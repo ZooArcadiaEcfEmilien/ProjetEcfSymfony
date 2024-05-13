@@ -11,20 +11,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
-use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
-
-
 
 class AvisEntityCrudController extends AbstractCrudController
 {
-    public function index(AdminContext $context)
-    {
-        if (!$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_EMPLOYE')) {
-            return $this->redirectToRoute('admin');
-        }
-        // Continuer avec l'affichage de la page normalement
-        return parent::index($context);
-    }
     public function configureActions(Actions $actions): Actions{
 
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL)

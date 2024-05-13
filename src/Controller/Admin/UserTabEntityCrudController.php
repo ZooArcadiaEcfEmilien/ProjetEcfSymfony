@@ -15,20 +15,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\Validator\Constraints\Length;
 
-use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
-
-
-
 class UserTabEntityCrudController extends AbstractCrudController
 {   
-    public function index(AdminContext $context)
-    {
-        if (!$this->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('admin');
-        }
-        // Continuer avec l'affichage de la page normalement
-        return parent::index($context);
-    }
     public static function getEntityFqcn(): string
     {
         return UserTabEntity::class;
@@ -86,21 +74,15 @@ class UserTabEntityCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         if ($entityInstance instanceof UserTabEntity) {
-            // Récupérer le mot de passe depuis l'entité
+
             $plainPassword = $entityInstance->getPassword();
 
-            // Hasher le mot de passe
             $hashedPassword = $this->passwordHasher->hashPassword(
                 $entityInstance,
                 $plainPassword
             );
-
-            // Définir le mot de passe hashé sur l'entité utilisateur
             $entityInstance->setPassword($hashedPassword);
         }
-
-        // Appeler la méthode parente pour persister l'entité
         parent::persistEntity($entityManager, $entityInstance);
     }
-
 }

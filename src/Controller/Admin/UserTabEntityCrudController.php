@@ -15,10 +15,20 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\Validator\Constraints\Length;
 
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
+
 
 
 class UserTabEntityCrudController extends AbstractCrudController
-{    
+{   
+    public function index(AdminContext $context)
+    {
+        if (!$this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('admin');
+        }
+        // Continuer avec l'affichage de la page normalement
+        return parent::index($context);
+    }
     public static function getEntityFqcn(): string
     {
         return UserTabEntity::class;

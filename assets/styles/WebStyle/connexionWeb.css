@@ -28,10 +28,7 @@
     }
 
 /*FORMULAIRE DE CONTACT*/
-h1 {
-    text-align: center;
-    content: "Cette espace de connexion est uniquement réservé à notre personnel";
-}
+
 .login-container {
     width: 80%;
     margin: 0 auto;

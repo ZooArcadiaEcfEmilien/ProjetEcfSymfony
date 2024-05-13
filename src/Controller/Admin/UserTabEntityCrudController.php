@@ -13,6 +13,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use Symfony\Component\Validator\Constraints\Length;
+
 
 
 class UserTabEntityCrudController extends AbstractCrudController
@@ -35,21 +37,37 @@ class UserTabEntityCrudController extends AbstractCrudController
     {
         $this->passwordHasher = $passwordHasher;
     }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud->setFormOptions([
+            'validation_groups' => ['Default', 'create'],
+        ]);
+    }
     public function configureFields(string $pageName): iterable
     {
+        $roleChoices = [
+            'Utilisateur' => 'ROLE_USER',
+            'Administrateur' => 'ROLE_ADMIN',
+            'Employe' => 'ROLE_EMPLOYE',
+            'Veterinaire' => 'ROLE_VETERINAIRE'
+            // Ajoutez d'autres rôles si nécessaire
+        ];
+
         return [
+
             ChoiceField::new('roles')
-            ->setChoices([
-                'Utilisateur' => 'ROLE_USER',
-                'Administrateur' => 'ROLE_ADMIN',
-                // Ajoutez d'autres rôles si nécessaire
-            ])
-            ->allowMultipleChoices()
-            ->setRequired(true)
-            ->setLabel('Rôles'),   
+                ->setChoices($roleChoices)
+                ->allowMultipleChoices()
+                ->setRequired(true)
+                ->setLabel('Rôles'),   
             
             TextField::new('password')
-                ->setFormType(PasswordType::class),
+                ->setFormType(PasswordType::class)
+                ->setFormTypeOptions([
+                    'constraints' => [
+                        new Length(['min' => 4, 'minMessage' => 'Le mot de passe doit contenir au moins {{ limit }} caractères.'])
+                    ],
+                ]),
             TextField::new('userName'),
             EmailField::new('mail'),
         ];
@@ -76,52 +94,3 @@ class UserTabEntityCrudController extends AbstractCrudController
     }
 
 }
-
-    /*public function configureFields(string $pageName): iterable
-    {
-        return [
-            ChoiceField::new('roles')
-            ->setChoices([
-                'Utilisateur' => 'ROLE_USER',
-                'Administrateur' => 'ROLE_ADMIN',
-                // Ajoutez d'autres rôles si nécessaire
-            ])
-            ->allowMultipleChoices()
-            ->setRequired(true)
-            ->setLabel('Rôles'),   
-            
-            TextField::new('password')
-                ->setFormType(PasswordType::class),
-            TextField::new('userName'),
-            EmailField::new('mail'),
-        ];
-    }*/
-   /* public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
-    {
-        $user = new UserTabEntity();
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            // do anything else you need here, like send an email
-
-            return $security->login($user, 'form_login', 'main');
-        }
-
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form,
-        ]);
-    }
-    
-}*/

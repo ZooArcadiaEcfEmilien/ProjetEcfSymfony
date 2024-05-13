@@ -73,7 +73,9 @@ class UserTabEntity implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
-        $roles[] = 'ROLE_ADMIN'; 
+        $roles[] = 'ROLE_ADMIN';
+        $roles[] = 'ROLE_VETERINAIRE';
+        $roles[] = 'ROLE_EMPLOYE';
 
         return array_unique($roles);
     }

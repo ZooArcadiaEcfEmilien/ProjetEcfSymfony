@@ -59,27 +59,14 @@
         height: 10vh;
 
     }
-    h1 {
-        margin-left: 13%;
-    }
-   /* h2::before{
-        content:"Nos Services";
-        text-align: center;
-        
-    }*/
+    
     .carrousselImageAccueil{
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-    footer{
-        text-align: center;
-        background-color: #0000007a;
-    }
-    .footer-links a{
-        color: white;
-    }
+
 
     /* 4 services */
     .service img{

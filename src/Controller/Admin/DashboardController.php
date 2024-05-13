@@ -34,13 +34,30 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class);
-        yield MenuItem::linkToCrud('Avis', 'fas fa-star', AvisEntity::class);
-        yield MenuItem::linkToCrud('Formulaires', 'fas fa-file-alt', FormulaireEntity::class);
-        yield MenuItem::linkToCrud('Habitats', 'fas fa-home', HabitatEntity::class);
-        yield MenuItem::linkToCrud('Services', 'fas fa-concierge-bell', ServiceTabEntity::class);
-        yield MenuItem::linkToCrud('UserAcces', 'fas fa-user', UserAccesEntity::class);
-        yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class);
-        yield MenuItem::linkToCrud('Statistiques', 'fas fa-chart-bar', StatistiqueEntity::class);
+        $roles = $this->getUser()->getRoles();
+
+        yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class)
+            ->setPermission(in_array('', $roles));
+
+        yield MenuItem::linkToCrud('Avis', 'fas fa-star', AvisEntity::class)
+            ->setPermission(in_array('', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
+
+        yield MenuItem::linkToCrud('Formulaires', 'fas fa-file-alt', FormulaireEntity::class)
+            ->setPermission(in_array('', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
+
+        yield MenuItem::linkToCrud('Habitats', 'fas fa-home', HabitatEntity::class)
+            ->setPermission(in_array('ROLE_EMPLOYE', $roles));
+
+        yield MenuItem::linkToCrud('Services', 'fas fa-concierge-bell', ServiceTabEntity::class)
+            ->setPermission(in_array('ROLE_VETERINAIRE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
+
+        yield MenuItem::linkToCrud('UserAcces', 'fas fa-user', UserAccesEntity::class)
+            ->setPermission(in_array('ROLE_EMPLOYE', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
+
+        yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class)
+            ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
+
+        yield MenuItem::linkToCrud('Statistiques', 'fas fa-chart-bar', StatistiqueEntity::class)
+            ->setPermission(in_array('ROLE_EMPLOYE', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
     }
 }

@@ -50,16 +50,16 @@ class UserTabEntityCrudController extends AbstractCrudController
             'Administrateur' => 'ROLE_ADMIN',
             'Employe' => 'ROLE_EMPLOYE',
             'Veterinaire' => 'ROLE_VETERINAIRE'
-            // Ajoutez d'autres rôles si nécessaire
         ];
 
         return [
 
             ChoiceField::new('roles')
+                
                 ->setChoices($roleChoices)
                 ->allowMultipleChoices()
                 ->setRequired(true)
-                ->setLabel('Rôles'),   
+                ->setLabel('Rôles'),
             
             TextField::new('password')
                 ->setFormType(PasswordType::class)

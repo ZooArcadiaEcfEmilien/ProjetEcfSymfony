@@ -37,4 +37,29 @@ footer {
     margin: 0 10px;
     
 }
+
+/* ANIMAL_LIST */
+
+.animals{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.animal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.animal p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animal img{
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+}
+
 }

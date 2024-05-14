@@ -20,7 +20,7 @@
           /*Formulaire de connexion*/
     .login-container {
         width: 90%;
-
+        height: 90%;
         margin: 5%;
     }
     
@@ -60,7 +60,7 @@
         margin-bottom: 3%;
       }
       input[type="text"], input[type="password"] {
-        width: 95%;
+        width: 90%;
         padding: 2%;
         border: 1px solid #ccc;
         border-radius: 3%;

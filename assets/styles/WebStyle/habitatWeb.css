@@ -1,36 +1,7 @@
 @media only screen and (min-width: 601px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
 
-    .habitats {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    .habitat {
-        width: 35%;
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.38);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .habitat h2 {
-        margin-top: 0;
-    }
-    
-    .habitat img {
-        max-width: 100%;
-        height: auto;
-        width: 60%;
-    }
-    
+
 
 .banderolePub{
     height: 5%;

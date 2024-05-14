@@ -14,76 +14,14 @@
     .nav-container {
         text-align: center;
     }
-          
-    .menu-btn {
-        display: block;
-        background-color: #07522F;
 
-        border: none;
-        border-radius: 5px;
-        width: 17%;
-        color: white;
-        font-family: fantasy;
-        font-size: 100%;
-      
-
-
-    }
-    .menu-btn:hover{
-        background-color: #309f50;
-    } 
-          
-    .nav-menu {
-        display: none;
-    }
-          
-    .nav-menu.active {
-        display: block;
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        background-color: #07522F;
-
-    }
-          
-    .nav-menu a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #ffffff;
-
-        font-weight: bold;
-    }
-    h1::before{
-        content: "Zoo Arcadia";
-    }
-    .menuTitreMobile{
-        display: flex;
-        background-color: #07522F;
-        height: 10vh;
-
-    }
-    h1 {
-        margin-left: 13%;
-    }
-    /*h2::before{
-        content:"Les 4 habitats";
-        display: flex;
-        justify-content: center;
-    }*/
     .carrousselImageAccueil{
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-    footer{
-        text-align: center;
-        background-color: #0000007a;
-    }
-    .footer-links a{
-        color: white;
-    }
+
     .habitatsGeneral{
         text-align: center;
     }

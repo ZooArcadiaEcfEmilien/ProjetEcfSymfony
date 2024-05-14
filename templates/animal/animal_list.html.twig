@@ -1,0 +1,23 @@
+{% include 'HautDePage.html.twig' %}
+{% include 'Menu.html.twig' %}
+{% block body %}
+    <h1>Animaux de l'habitat {{ habitat.getHabitatNom() }}</h1>
+    <div class="animals">
+        {% for animal in animals %}
+            <div class="animal">
+                <h2>{{ animal.getName() }}</h2>
+                <p>Race: {{ animal.getRace() }}</p>
+                {% if animal.getNourritureType() is not empty %}
+                    <p>Nourriture favorite: {{ animal.getNourritureType() }}</p>
+                {% endif %}
+                <p>Date du dernier passage: {{ animal.getDatePassage() ? animal.getDatePassage()|date('d/m/Y') }}</p>
+                <p>Etat de l'animal: {{ animal.getEtatAnimal() }}</p>
+                <p>Commentaire sur l'animal: {{ animal.getDetailsCommentaire()| raw }}</p>
+
+                <img src="{{ asset('/uploads/images/Animal/' ~ animal.getImage()) }}" alt="{{ animal.getName() }}">
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% include 'BasDePage.html.twig' %}

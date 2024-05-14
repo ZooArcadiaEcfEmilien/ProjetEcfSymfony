@@ -26,39 +26,8 @@
 
     }
           
-    .nav-menu {
-        display: none;
-    }
-          
-    .nav-menu.active {
-        display: block;
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        background-color: #07522F;
 
-    }
-        .menu-btn:hover{
-        background-color: #309f50;
-    } 
-          
-    .nav-menu a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #ffffff;
 
-        font-weight: bold;
-    }
-    h1::before{
-        content: "Zoo Arcadia";
-    }
-    .menuTitreMobile{
-        display: flex;
-        background-color: #07522F;
-        height: 10vh;
-
-    }
     h1 {
         margin-left: 13%;
     }

@@ -1,4 +1,4 @@
-@media only screen and (min-width: 901px) {
+@media only screen and (min-width: 601px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
     body{
         display: flex;
@@ -28,10 +28,7 @@
     }
 
 /*FORMULAIRE DE CONTACT*/
-h1 {
-    text-align: center;
-    content: "Cette espace de connexion est uniquement réservé à notre personnel";
-}
+
 .login-container {
     width: 80%;
     margin: 0 auto;

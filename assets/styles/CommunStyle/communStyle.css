@@ -10,6 +10,9 @@ body {
     flex-direction: column;
 
 }
+h1{
+    color: white;
+}
 @media only screen and (max-width: 900px) {
 
     .nav-menu {
@@ -56,19 +59,25 @@ body {
 }
 
 /*FOOTER*/
-footer {
-    background-color: #000000;
-    min-height: 3vh;
-    display: flex;
-    align-items: center;
-
-}
 .footer-links {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    background-color: #000000;
+    color: #ffffff; /* Ajout de la couleur de texte pour contraster */
 
 }
+
+footer {
+    position: relative;
+    bottom: 0; /* Assure que le footer reste en bas de son parent */
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+}
+
+
+  
 .footer-links a {
     color: white;
     text-decoration: none;
@@ -76,6 +85,9 @@ footer {
 /* MENU + TITRE MOBILE */
 @media only screen and (max-width: 600px) {
 
+    h2 {
+        color: white;
+    }
     .menu-btn {
         display: block;
         background-color: #07522F;
@@ -83,10 +95,10 @@ footer {
         border-radius: 5px;
         width: 30%;
         color: white;
-        color: white;
         font-family: fantasy;
         font-size: 100%;
-        margin: auto;
+        height: 100%;
+        padding: 1%;
 
     }
     .menuTitreMobile h1{
@@ -129,4 +141,37 @@ footer {
         min-height: 6%;
 
     }
+    h1{
+        text-align: center;
+    }    
+}
+/* HABITAT RESPONSIVE*/
+.habitats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.habitat {
+    width: 35%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.38);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.habitat h2 {
+    margin-top: 0;
+}
+
+.habitat img {
+    max-width: 100%;
+    height: auto;
+    width: 60%;
 }

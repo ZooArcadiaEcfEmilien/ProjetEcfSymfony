@@ -21,7 +21,7 @@ class AnimalEntity
     #[ORM\Column(type: "string", length: 255)]
     private $race;
 
-    #[ORM\Column(type: "string")]
+    #[ORM\Column(type: "text")]
     private ?string $image = null;
     
     #[ORM\Column(type: "string", length: 255)]

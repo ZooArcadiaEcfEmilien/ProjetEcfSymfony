@@ -1,5 +1,5 @@
 body {
-    /*height: 100vh;*/
+    height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: rgb(74, 114, 40);
@@ -10,31 +10,123 @@ body {
     flex-direction: column;
 
 }
+@media only screen and (max-width: 900px) {
+
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+}
+
 @media only screen and (min-width: 901px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
 
 .menu-btn {
     display: none;
 }
+}
 
+/* ANIMAL_LIST RESPONSIVE*/
+
+.animals{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+
+}
+.animal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.656);
+    margin-bottom: 1%;
+    align-items: center;
+}
+.animal div{
+    text-align: center;
+}
+.animal img{
+    width: 30%;
+    margin-bottom: 1%;
+}
+
+/*FOOTER*/
 footer {
     background-color: #000000;
-    color: white;
-    position: relative;
     min-height: 3vh;
+    display: flex;
+    align-items: center;
 
 }
 .footer-links {
     display: flex;
     justify-content: space-evenly;
-
-    bottom: 0;
     width: 100%;
+
 }
 .footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    
 }
+/* MENU + TITRE MOBILE */
+@media only screen and (max-width: 600px) {
+
+    .menu-btn {
+        display: block;
+        background-color: #07522F;
+        border: none;
+        border-radius: 5px;
+        width: 30%;
+        color: white;
+        color: white;
+        font-family: fantasy;
+        font-size: 100%;
+        margin: auto;
+
+    }
+    .menuTitreMobile h1{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }  
+    .nav-menu {
+        display: none;
+    }
+    .menu-btn:hover{
+        background-color: #309f50;
+    } 
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top:6%;
+        left: 0;
+        background-color: #07522F;
+        width: 40%; 
+        border-radius: 0 0 5px 5px; 
+        border: solid white 1px;
+    }
+          
+    .nav-menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .menuTitreMobile{
+        display: flex;
+        background-color: #07522F;
+        height:6%;
+        width: 100%;
+        min-height: 6%;
+
+    }
 }

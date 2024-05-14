@@ -10,73 +10,13 @@
     .nav-container {
         text-align: center;
     }
-          
-    .menu-btn {
-        display: flex;
-        background-color: #07522F;
-
-        border: none;
-        border-radius: 5px;
-        width: 17%;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-family: fantasy;
-        font-size: 100%;
-
-    }
-          
-    .nav-menu {
-        display: none;
-    }
-          
-    .nav-menu.active {
-        display: block;
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        background-color: #07522F;
-
-    }
-        .menu-btn:hover{
-        background-color: #309f50;
-    } 
-          
-    .nav-menu a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #ffffff;
-
-        font-weight: bold;
-    }
-    h1::before{
-        content: "Zoo Arcadia";
-    }
-    .menuTitreMobile{
-        display: flex;
-        background-color: #07522F;
-        height: 10vh;
-
-    }
-    h1 {
-        margin-left: 13%;
-    }
     .carrousselImageAccueil{
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-    footer{
-        text-align: center;
-        position: absolute;
-        bottom: 0px;
-        background-color: #0000007a;
-    }
-    .footer-links a{
-      color: white;
-  }
+
           /*Formulaire de connexion*/
     .login-container {
         width: 90%;

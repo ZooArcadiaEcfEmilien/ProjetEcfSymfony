@@ -1,6 +1,8 @@
 <div class="banderolePub element-a-cacher">Offre promotionnelle : 1 place adulte acheté = 1 place enfant offerte* ! </div>
 <div class="menuTitreMobile">
     <button class="menu-btn">Menu</button>
+        <h1>Zoo Arcadia</h1>
+
     <div class="nav-container">
         <nav class="nav-menu">
             <a href="{{ path('app_accueil') }}">Accueil</a>
@@ -11,3 +13,14 @@
         </nav>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuBtn = document.querySelector('.menu-btn');
+        var navMenu = document.querySelector('.nav-menu');
+
+        menuBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>

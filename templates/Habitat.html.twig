@@ -8,7 +8,9 @@
             <div class="habitat">
                 <h2>{{ habitat.getHabitatNom() }}</h2>
                 <p>{{ habitat.getHabitatDescription() }}</p>
-                <img src="{{ habitat.getHabitatImage() }}" alt="{{ habitat.getHabitatNom() }}">
+                <a href="{{ path('app_animal_list', {'habitatId': habitat.getId()}) }}">
+                    <img src="{{ habitat.getHabitatImage() }}" alt="{{ habitat.getHabitatNom() }}">
+                </a>
             </div>
         {% endfor %}
     </div>

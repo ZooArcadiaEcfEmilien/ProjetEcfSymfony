@@ -18,4 +18,16 @@ class HabitatController extends AbstractController
             'habitats' => $habitats,
         ]);
     }
+
+    #[Route('/habitat/{habitatId}/animals', name: 'app_animal_list')]
+public function animalList($habitatId, HabitatEntityRepository $habitatRepository): Response
+{
+    $habitat = $habitatRepository->find($habitatId);
+    $animals = $habitat->getAnimalEntities();
+
+    return $this->render('Animal/animal_list.html.twig', [
+        'habitat' => $habitat,
+        'animals' => $animals,
+    ]);
+}
 }

@@ -1,4 +1,4 @@
-@media only screen and (min-width: 901px) {
+@media only screen and (min-width: 601px) {
     /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
 
 
@@ -37,6 +37,9 @@ h2{
     width: 70%;
 }
 
+form div{
+    width: 100%;
+}
 .nouvelAvis{
     max-width: 100%;
     width: 70%;
@@ -68,7 +71,6 @@ nav a {
 
 h1, .introduction, .horairesOuverture{
     text-align: center;
-
     content: " Bienvenu au Zoo Arcadia ! ";
 }
 .introduction{

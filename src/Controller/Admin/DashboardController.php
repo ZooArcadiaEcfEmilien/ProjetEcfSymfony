@@ -36,8 +36,7 @@ class DashboardController extends AbstractDashboardController
     {
         $roles = $this->getUser()->getRoles();
 
-        yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class)
-            ->setPermission(in_array('', $roles));
+        yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class);
 
         yield MenuItem::linkToCrud('Avis', 'fas fa-star', AvisEntity::class)
             ->setPermission(in_array('', $roles)|| in_array('ROLE_VETERINAIRE', $roles));

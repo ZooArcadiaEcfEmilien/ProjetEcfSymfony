@@ -51,7 +51,13 @@
 
     <div class="horairesOuverture">
         <p>Nos horaires d'ouverture : <br>
-            Lundi Mardi Jeudi : 9h30 - 17h30 / Mercredi & Vendredi : 9h00 - 18h00 / Samedi & Dimanche : 9h00 - 19h00
+        Lundi: {{ horaires.lundiStart|date('H:i') }} - {{ horaires.lundiClose|date('H:i') }}<br>
+        Mardi: {{ horaires.mardiStart|date('H:i') }} - {{ horaires.mardiClose|date('H:i') }}<br>
+        Mercredi: {{ horaires.mercrediStart|date('H:i') }} - {{ horaires.mercrediClose|date('H:i') }}<br>
+        Jeudi: {{ horaires.jeudiStart|date('H:i') }} - {{ horaires.jeudiClose|date('H:i') }}<br>
+        Vendredi: {{ horaires.vendrediStart|date('H:i') }} - {{ horaires.vendrediClose|date('H:i') }}<br>
+        Samedi: {{ horaires.samediStart|date('H:i') }} - {{ horaires.samediClose|date('H:i') }}<br>
+        Dimanche: {{ horaires.dimancheStart|date('H:i') }} - {{ horaires.dimancheClose|date('H:i') }}
         </p>
     </div>
 {% endblock %}

@@ -3,19 +3,23 @@
 {% block body %}
     <h1>Animaux de l'habitat {{ habitat.getHabitatNom() }}</h1>
     <div class="animals">
-        {% for animal in animals %}
+        {% for animalData in animalsWithLikes %}
             <div class="animal">
-                <h2>{{ animal.getName() }}</h2>
-                <p>Race: {{ animal.getRace() }}</p>
-                {% if animal.getNourritureType() is not empty %}
-                    <p>Nourriture favorite: {{ animal.getNourritureType() }}</p>
+                <h2>{{ animalData.animal.getName() }}</h2>
+                <p>Race: {{ animalData.animal.getRace() }}</p>
+                {% if animalData.animal.getNourritureType() is not empty %}
+                    <p>Nourriture favorite: {{ animalData.animal.getNourritureType() }}</p>
                 {% endif %}
-                <p>Date du dernier passage: {{ animal.getDatePassage() ? animal.getDatePassage()|date('d/m/Y') }}</p>
-                <p>Etat de l'animal: {{ animal.getEtatAnimal() }}</p>
-                <p>Commentaire sur l'animal: {{ animal.getDetailsCommentaire()| raw }}</p>
+                <p>Date du dernier passage: {{ animalData.animal.getDatePassage() ? animalData.animal.getDatePassage()|date('d/m/Y') }}</p>
+                <p>Etat de l'animal: {{ animalData.animal.getEtatAnimal() }}</p>
+                <p>Commentaire sur l'animal: {{ animalData.animal.getDetailsCommentaire()| raw }}</p>
 
-                <img src="{{ asset('/uploads/images/Animal/' ~ animal.getImage()) }}" alt="{{ animal.getName() }}">
+                <img src="{{ asset('/uploads/images/Animal/' ~ animalData.animal.getImage()) }}" alt="{{ animalData.animal.getName() }}">
 
+                <form action="{{ path('animal_like', {'id': animalData.animal.getId()}) }}" method="post">
+                    <button type="submit">Like</button>
+                </form>
+                <p>Likes: {{ animalData.likeCount }}</p>
             </div>
         {% endfor %}
     </div>

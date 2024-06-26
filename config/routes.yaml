@@ -18,3 +18,8 @@ app_connexion:
     path: /connexion
     controller: App\Controller\ConnexionController::index
     methods: ['GET', 'POST']
+
+
+animal_like:
+    path: /animal/like/{id}
+    controller: App\Controller\AnimalLikeController::likeAnimal

@@ -1,0 +1,7 @@
+[
+    {"nom": "Ordinateur portable", "marque": "Lenovo", "quantité": 30, "catégorie":"electronique"},
+    {"nom": "Smartphone", "marque": "Samsung", "quantité": 20, "catégorie":"electronique"},
+    {"nom": "Casque audio", "marque": "Sony", "quantité": 15, "catégorie":"electronique"},
+    {"nom": "Tablette", "marque": "Apple", "quantité": 10, "catégorie":"electronique"},
+    {"nom": "Enceinte Bluetooth", "marque": "JBL", "quantité": 25, "catégorie":"electronique"}
+]

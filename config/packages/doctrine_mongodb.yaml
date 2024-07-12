@@ -3,7 +3,7 @@ doctrine_mongodb:
     auto_generate_hydrator_classes: true
     connections:
         default:
-            server: mongodb://localhost:27017
+            server: "%mongodb_server%"
             options: {}
     default_database: LikeZooArcadiaEcfMongoDb
     document_managers:

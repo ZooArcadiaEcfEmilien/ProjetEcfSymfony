@@ -135,6 +135,5 @@ class AnimalEntity
         $this->habitatDeLAnimal = $habitatDeLAnimal;
 
         return $this;
-    }
-    
+    }   
 }

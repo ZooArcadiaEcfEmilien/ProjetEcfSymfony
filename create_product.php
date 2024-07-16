@@ -3,15 +3,30 @@
 require_once 'vendor/autoload.php';
 
 use App\Document\Product;
+use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Configuration;
-use Doctrine\Persistence\Mapping\Driver\MappingDriver;
-use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use MongoDB\Client;
-use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver as DoctrineAnnotationDriver;
 
-// Créez une configuration
+// Charger les variables d'environnement
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__.'/.env');
+
+// Boot Symfony Kernel
+$kernel = new \App\Kernel('dev', true);
+$kernel->boot();
+
+/** @var ContainerInterface $container */
+$container = $kernel->getContainer();
+
+// Récupérer l'URI MongoDB depuis les paramètres
+$mongoUri = $container->getParameter('mongodb_server');
+
+// Créez une configuration pour le gestionnaire de documents
 $config = new Configuration();
 $config->setProxyDir(__DIR__ . '/proxies');
 $config->setProxyNamespace('Proxies');
@@ -23,8 +38,8 @@ $reader = new AnnotationReader();
 $driver = new AnnotationDriver($reader, [__DIR__ . '/src/Document']);
 $config->setMetadataDriverImpl($driver);
 
-// Créez le gestionnaire de documents
-$client = new Client('mongodb://DbNameEcfZoo:DbMotDePasse-2024-Ecf-ZooArcadia@localhost:8090/?directConnection=true');
+// Créez le gestionnaire de documents avec l'URI MongoDB
+$client = new Client($mongoUri);
 $dm = DocumentManager::create($client, $config);
 
 // Créez un nouvel objet Product

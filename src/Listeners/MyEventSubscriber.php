@@ -3,10 +3,9 @@
 namespace App\Listeners;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
-use Doctrine\ORM\Event\LifecycleEventArgs;
-
+use Doctrine\ODM\MongoDB\Event\LifecycleEventArgs;
 use App\Entity\Order;
-use Documents\Product;
+use App\Document\Product;
 
 class MyEventSubscriber
 {

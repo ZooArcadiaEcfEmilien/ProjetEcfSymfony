@@ -12,8 +12,10 @@ services:
     App\Listeners\MyEventSubscriber:
         arguments:
             - '@doctrine_mongodb.odm.document_manager'
+
         tags:
             - { name: doctrine_mongodb.odm.event_listener, connection: default, event: postLoad}
+
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

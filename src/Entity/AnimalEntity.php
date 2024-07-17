@@ -50,8 +50,10 @@ class AnimalEntity
      */
     private $animalCounter;
 
-    #[ORM\Column(type: "string", nullable: true)]
-    private ?string $animalCounterId = null;
+    /**
+     * @ORM\Column(type="string", length=24, nullable=true)
+     */
+    private $animalCounterId;
 
     // GET SET ANIMAL COUNTER
     
@@ -162,9 +164,9 @@ class AnimalEntity
     {
         $this->habitatDeLAnimal = $habitatDeLAnimal;
     }
+    public function __toString(): string
+    {
+        return $this->name ?? 'Animal';
+    }
+    
 }
-/*
-$newAnimal = new AnimalEntity();
-$newAnimal->setanimalCounter($animalCounter);
-$em->persist($newAnimal);
-$em->flush();*/

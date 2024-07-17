@@ -28,3 +28,9 @@ class Product
         $this->title = $title;
     }
 }
+
+
+$product = new Product();
+$product->setTitle('Test Product');
+//$dm->persist($product);
+//$dm->flush();

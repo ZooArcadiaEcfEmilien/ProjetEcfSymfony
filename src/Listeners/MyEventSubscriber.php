@@ -3,11 +3,13 @@
 namespace App\Listeners;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
-use Doctrine\ODM\MongoDB\Event\LifecycleEventArgs;
-use App\Entity\Order;
-use App\Document\Product;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
+use App\Entity\AnimalEntity;
+use App\Document\AnimalCounter;
+use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Events;
 
-class MyEventSubscriber
+class MyEventSubscriber implements EventSubscriber
 {
     private $dm;
 
@@ -16,21 +18,29 @@ class MyEventSubscriber
         $this->dm = $dm;
     }
 
-    public function postLoad(LifecycleEventArgs $eventArgs): void
+    public function getSubscribedEvents()
     {
-        $order = $eventArgs->getObject();
+        return [Events::postPersist];
+    }
 
-        if (!$order instanceof Order) {
+    public function postPersist(LifecycleEventArgs $args)
+    {
+        $entity = $args->getObject();
+
+        if (!$entity instanceof AnimalEntity) {
             return;
         }
 
-        $em = $eventArgs->getObjectManager();
-        $productReflProp = $em->getClassMetadata(Order::class)
-            ->getReflectionClass()->getProperty('product');
-        $productReflProp->setAccessible(true);
-        $productReflProp->setValue(
-            $order, $this->dm->getReference(Product::class, $order->getProductId())
-        );
+        // Créer et persister un nouveau AnimalCounter
+        $animalCounter = new AnimalCounter();
+        $animalCounter->setAnimalEntityId($entity->getId());
+        $animalCounter->setAnimalEntityName($entity->getName());
+        $animalCounter->setCounter(0);
+
+        $this->dm->persist($animalCounter);
+        $this->dm->flush();
+
+        // Associer AnimalCounter à AnimalEntity
+        $entity->setAnimalCounter($animalCounter);
     }
 }
-    

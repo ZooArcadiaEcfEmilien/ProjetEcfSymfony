@@ -50,12 +50,12 @@ class Order
         return $this->product;
     }
 }
-echo"test 6";
-$order = new Order();
+/*echo"test 6";
+$order = new Order(); // CREER  UN ANIMAL
 echo"test 7";
-$order->setProduct($product);
+$order->setProduct($product);  // ASSOCIE ANIMAL AU COMPTEUR MONGO
 echo"test 8";
 $em->persist($order);
 echo"test 9";
 $em->flush();
-echo"test 10";
+echo"test 10";*/

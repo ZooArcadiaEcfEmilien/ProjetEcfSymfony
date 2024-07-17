@@ -122,7 +122,7 @@ class AnimalEntity
 
     public function __toString(): string
     {
-        return $this->name; 
+        return $this->name;
     }
 
     public function getHabitatDeLAnimal(): ?HabitatEntity
@@ -135,6 +135,5 @@ class AnimalEntity
         $this->habitatDeLAnimal = $habitatDeLAnimal;
 
         return $this;
-    }
-    
+    }   
 }

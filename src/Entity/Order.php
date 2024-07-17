@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Documents\Product;
+use App\Document\Product;
 
 /**
  * @Entity
@@ -22,7 +22,7 @@ class Order
     private $productId;
 
     /**
-     * @var \Documents\Product
+     * @var \App\Document\Product
      */
     private $product;
 

@@ -1,14 +1,16 @@
 <?php
 
-namespace Documents;
+namespace App\Document;
 
-/** @Document */
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/** @MongoDB\Document */
 class Product
 {
-    /** @Id */
+    /** @MongoDB\Id */
     private $id;
 
-    /** @Field(type="string") */
+    /** @MongoDB\Field(type="string") */
     private $title;
 
     public function getId(): ?string

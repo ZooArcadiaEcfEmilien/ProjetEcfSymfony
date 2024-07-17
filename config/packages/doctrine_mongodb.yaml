@@ -12,7 +12,7 @@ doctrine_mongodb:
             mappings:
                 App:
                     dir: '%kernel.project_dir%/src/Document'
-                    prefix: 'Documents'
+                    prefix: 'Document'
 
 when@prod:
     doctrine_mongodb:

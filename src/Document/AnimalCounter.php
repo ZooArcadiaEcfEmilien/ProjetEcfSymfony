@@ -24,7 +24,6 @@ class AnimalCounter
     public function __construct()
     {
         $this->counter = 0;
-        echo "AnimalCounter created with counter = 0\n";
     }
 
     public function getId(): ?string
@@ -39,8 +38,8 @@ class AnimalCounter
 
     public function setAnimalEntityId(string $animalEntityId): void
     {
+        echo "DOCUMENT_ANIMALCOUNTER : SET ANIMAL ENTITY ID \n";
         $this->animalEntityId = $animalEntityId;
-        echo "AnimalCounter animalEntityId set to $animalEntityId\n";
     }
 
     public function getAnimalEntityName(): ?string
@@ -50,8 +49,8 @@ class AnimalCounter
 
     public function setAnimalEntityName(string $animalEntityName): void
     {
+        echo "DOCUMENT_ANIMALCOUNTER : SET ANIMAL ENTITY NAME \n";  
         $this->animalEntityName = $animalEntityName;
-        echo "AnimalCounter animalEntityName set to $animalEntityName\n";
     }
 
     public function getCounter(): ?int
@@ -66,7 +65,7 @@ class AnimalCounter
 }
 
 $animalCounter = new AnimalCounter();
-$animalCounter->setAnimalEntityId("0");
-$animalCounter->setAnimalEntityName("Test");
+$animalCounter->setAnimalEntityId('animalEntityId');
+$animalCounter->setAnimalEntityName('animalEntityName');
 $animalCounter->setCounter(0);
-
+echo "DOCUMENT_ANIMALCOUNTER : ANIMALCOUNTER INSTANCIER \n";

@@ -1,46 +1,59 @@
 <?php
 
 namespace App\Listeners;
-
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Doctrine\ORM\Events;
 use App\Entity\AnimalEntity;
 use App\Document\AnimalCounter;
 use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\Events;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+echo "Hello World \n";
 
 class MyEventSubscriber implements EventSubscriber
 {
     private $dm;
+    private $em;
 
-    public function __construct(DocumentManager $dm)
+    public function __construct(DocumentManager $dm, \Doctrine\ORM\EntityManagerInterface $em)
     {
         $this->dm = $dm;
+        $this->em = $em;
     }
 
     public function getSubscribedEvents()
     {
+        echo"MYEVENT : getSubscribedEvents \n";
+
         return [Events::postPersist];
+        
     }
 
     public function postPersist(LifecycleEventArgs $args)
     {
+        echo"MYEVENT : postPersist \n";
         $entity = $args->getObject();
 
+        // Vérifiez si l'entité est de type AnimalEntity
         if (!$entity instanceof AnimalEntity) {
             return;
         }
 
-        // Créer et persister un nouveau AnimalCounter
+        // Créez et persistez l'AnimalCounter
         $animalCounter = new AnimalCounter();
+        echo"MYEVENT  : AnimalCounter created \n";
+
         $animalCounter->setAnimalEntityId($entity->getId());
         $animalCounter->setAnimalEntityName($entity->getName());
-        $animalCounter->setCounter(0);
 
         $this->dm->persist($animalCounter);
         $this->dm->flush();
 
-        // Associer AnimalCounter à AnimalEntity
-        $entity->setAnimalCounter($animalCounter);
+        echo "MYEVENT : AnimalCounter persisted \n";
+        // Associez l'AnimalCounter à l'AnimalEntity
+        //$entity->setAnimalCounter($animalCounter);
+        //$this->em->persist($entity);
+        //$this->em->flush();
     }
 }

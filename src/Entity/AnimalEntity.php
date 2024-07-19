@@ -2,14 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Document\AnimalCounter;
-use Doctrine\ODM\MongoDB\DocumentManager;
+echo "ANIMAL_ENTITY";
 
-#[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
+#[ORM\Entity]
 #[ORM\Table(name: "animal")]
-
 class AnimalEntity
 {
     #[ORM\Id]
@@ -45,15 +43,10 @@ class AnimalEntity
     #[ORM\JoinColumn(nullable: false)]
     private ?HabitatEntity $habitatDeLAnimal = null;
 
-    /**
-     * @var \App\Document\AnimalCounter
-     */
-    private $animalCounter;
-
-    /**
-     * @ORM\Column(type="string", length=24, nullable=true)
-     */
+    #[ORM\Column(type: "string", length: 24, nullable: true)]
     private $animalCounterId;
+
+    private $animalCounter;
 
     // GET SET ANIMAL COUNTER
     
@@ -61,10 +54,13 @@ class AnimalEntity
     {
         $this->animalCounterId = $animalCounter->getId();
         $this->animalCounter = $animalCounter;
+        echo "ANIMAL_ENTITY setAnim@lCounter";
+
     }
 
     public function getAnimalCounter(): ?AnimalCounter
     {
+        echo "ANIMAL_ENTITY getAnimalCounter";
         return $this->animalCounter;
     }
 
@@ -72,11 +68,13 @@ class AnimalEntity
 
     public function getId(): ?int
     {
+        echo "ANIMAL_ENTITY getId";
         return $this->id;
     }
 
     public function getName(): ?string
     {
+        echo "ANIMAL_ENTITY getName";
         return $this->name;
     }
 
@@ -122,6 +120,7 @@ class AnimalEntity
 
     public function setName(string $name): void
     {
+        echo "ANIMAL_ENTITY setName";
         $this->name = $name;
     }
 
@@ -164,9 +163,9 @@ class AnimalEntity
     {
         $this->habitatDeLAnimal = $habitatDeLAnimal;
     }
+
     public function __toString(): string
     {
         return $this->name ?? 'Animal';
     }
-    
 }

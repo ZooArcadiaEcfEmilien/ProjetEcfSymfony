@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Document\AnimalCounter;
-echo "ANIMAL_ENTITY";
+
 
 #[ORM\Entity]
 #[ORM\Table(name: "animal")]
@@ -53,14 +53,14 @@ class AnimalEntity
     public function setAnimalCounter(AnimalCounter $animalCounter): void
     {
         $this->animalCounterId = $animalCounter->getId();
+        echo "AnimalEntity : FUNC SetAnimalCounter getId \n";
         $this->animalCounter = $animalCounter;
-        echo "ANIMAL_ENTITY setAnim@lCounter";
-
+        echo "AnimalEntity : FUNC SetAnimalCounter animalcoounter = animalcounter \n";
     }
 
     public function getAnimalCounter(): ?AnimalCounter
     {
-        echo "ANIMAL_ENTITY getAnimalCounter";
+        echo "ANIMAL_ENTITY : FUNC getAnimalCounter \n";
         return $this->animalCounter;
     }
 
@@ -68,13 +68,13 @@ class AnimalEntity
 
     public function getId(): ?int
     {
-        echo "ANIMAL_ENTITY getId";
+        echo "ANIMAL_ENTITY getId \n";
         return $this->id;
     }
 
     public function getName(): ?string
     {
-        echo "ANIMAL_ENTITY getName";
+        echo "ANIMAL_ENTITY getName \n";
         return $this->name;
     }
 
@@ -120,7 +120,7 @@ class AnimalEntity
 
     public function setName(string $name): void
     {
-        echo "ANIMAL_ENTITY setName";
+        echo "ANIMAL_ENTITY setName \n";
         $this->name = $name;
     }
 

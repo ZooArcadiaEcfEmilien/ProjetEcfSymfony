@@ -6,6 +6,6 @@ services:
     ports:
       - "8090:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: DbNameEcfZoo
-      MONGO_INITDB_ROOT_PASSWORD: DbMotDePasse-2024-Ecf-ZooArcadia
+      MONGO_INITDB_ROOT_USERNAME: Emilien
+      MONGO_INITDB_ROOT_PASSWORD: dbUserPasswordZooEcf
       

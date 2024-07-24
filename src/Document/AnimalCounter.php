@@ -6,6 +6,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 echo"DOCUMENT_ANIMALCOUNTER \n";
 /**
  * @MongoDB\Document
+ * @MongoDB\Table(name="animal_counter")
  */
 class AnimalCounter
 {
@@ -39,7 +40,7 @@ class AnimalCounter
         return $this->animalEntityId;
     }
 
-    public function setAnimalEntityId(int $animalEntityId): void
+    public function setAnimalEntityId($animalEntityId): void
     {
         echo "AnimalCounter DOC : setAnimalEntityId \n";
         $this->animalEntityId = $animalEntityId;
@@ -69,9 +70,3 @@ class AnimalCounter
         $this->counter = $counter;
     }
 }
-
-$animalCounter = new AnimalCounter();
-$animalCounter->setAnimalEntityId('123');
-$animalCounter->setAnimalEntityName('doc animal counter setanimalEntityName');
-$animalCounter->setCounter(0);
-echo "DOCUMENT_ANIMALCOUNTER : ANIMALCOUNTER INSTANCIER \n";

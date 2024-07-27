@@ -1,11 +1,10 @@
-version: '3'
 services:
   mongodb:
     image: mongo:7.0.12
     restart: always
     ports:
       - "8090:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: Emilien
-      MONGO_INITDB_ROOT_PASSWORD: dbUserPasswordZooEcf
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: utilisateurNameEcfZoo
+      MONGO_INITDB_ROOT_PASSWORD: Password-autogenerate
       

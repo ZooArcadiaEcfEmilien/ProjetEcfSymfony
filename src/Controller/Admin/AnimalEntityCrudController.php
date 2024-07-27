@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\Admin\Trait\CustomAction;
 use App\Entity\AnimalEntity;
+use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
@@ -31,12 +32,14 @@ class AnimalEntityCrudController extends AbstractCrudController
         return AnimalEntity::class;
     }
     private $entityManager;
+    private $documentManager;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $entityManager, DocumentManager $documentManager)
     {
         $this->entityManager = $entityManager;
+        $this->documentManager = $documentManager;
     }
-
+    
     public function configureFields(string $pageName): iterable
     {
         return [

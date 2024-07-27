@@ -13,40 +13,49 @@ use Doctrine\Common\EventSubscriber;
 
 class MyEventSubscriber implements EventSubscriber
 {
+    public function getSubscribedEvents()
+    {
+        return [
+            'postPersist',
+        ];
+    }
+    
     private $dm;
-    private $em;
 
-    public function __construct(DocumentManager $dm, EntityManagerInterface $em)
+    public function __construct(DocumentManager $dm)
     {
         $this->dm = $dm;
-        $this->em = $em;
-    }
-
-    public function getSubscribedEvents(): array
-    {
-        return [Events::postPersist];
     }
 
     public function postPersist(LifecycleEventArgs $args)
     {
-        $dm = $this->dm;
         $entity = $args->getObject();
 
         // Vérifiez si l'entité est de type AnimalEntity
         if (!$entity instanceof AnimalEntity) {
             return;
         }
-        
+
         // Créez et persistez l'AnimalCounter
+        $animalCounter = $this->createAnimalCounter($entity);
+
+        // Persister et flusher dans une transaction pour plus de sécurité
+        $this->dm->persist($animalCounter);
+        $this->dm->flush();
+
+        // Associez l'AnimalCounter à l'AnimalEntity
+        $entity->setAnimalCounter($animalCounter);
+        $this->dm->flush();
+    }
+
+    private function createAnimalCounter(AnimalEntity $entity): AnimalCounter
+    {
         $animalCounter = new AnimalCounter();
         $animalCounter->setAnimalEntityId($entity->getId());
         $animalCounter->setAnimalEntityName($entity->getName());
         $animalCounter->setCounter(0);
-        
-        $dm->persist($animalCounter);
-        $dm->flush();
-        
-        // Associez l'AnimalCounter à l'AnimalEntity
         $entity->setAnimalCounter($animalCounter);
-}
+
+        return $animalCounter;
+    }
 }

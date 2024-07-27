@@ -4,27 +4,26 @@ namespace App\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 echo"DOCUMENT_ANIMALCOUNTER \n";
-/**
- * @MongoDB\Document
- * @MongoDB\Table(name="animal_counter")
- */
+
+#[MongoDB\Document]
+
 class AnimalCounter
 {
-    /** @MongoDB\Id */
+    #[MongoDB\Id]
+
     private $id;
 
-    /** @MongoDB\Field(type="string") */
+    #[MongoDB\Field(type:"string")]
     private $animalEntityId;
 
-    /** @MongoDB\Field(type="string") */
+    #[MongoDB\Field(type:"string")]
     private $animalEntityName;
 
-    /** @MongoDB\Field(type="int") */
+    #[MongoDB\Field(type:"int")]
     private $counter;
 
     public function __construct()
     {
-
         $this->counter = 0;
     }
 

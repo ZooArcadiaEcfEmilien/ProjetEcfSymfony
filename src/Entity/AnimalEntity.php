@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Document\AnimalCounter;
 
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
 #[ORM\Table(name: "animal")]
 class AnimalEntity
 {
@@ -16,10 +17,10 @@ class AnimalEntity
     private ?int $id = null;
 
     #[ORM\Column(type: "string", length: 255)]
-    private $name;
+    private string $name;
 
     #[ORM\Column(type: "string", length: 255)]
-    private $race;
+    private string $race;
 
     #[ORM\Column(type: "text", nullable: true)]
     private ?string $image = null;
@@ -53,14 +54,11 @@ class AnimalEntity
     public function setAnimalCounter(AnimalCounter $animalCounter): void
     {
         $this->animalCounterId = $animalCounter->getId();
-        echo "AnimalEntity : FUNC SetAnimalCounter getId \n";
         $this->animalCounter = $animalCounter;
-        echo "AnimalEntity : FUNC SetAnimalCounter animalcoounter = animalcounter \n";
     }
 
     public function getAnimalCounter(): ?AnimalCounter
     {
-        echo "ANIMAL_ENTITY : FUNC getAnimalCounter \n";
         return $this->animalCounter;
     }
 

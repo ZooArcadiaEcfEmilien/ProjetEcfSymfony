@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller\Admin;
 
 use App\Entity\Horaires;
@@ -16,16 +15,15 @@ class HorairesCrudController extends AbstractCrudController
     {
         return Horaires::class;
     }
-    public function configureActions(Actions $actions): Actions{
-
+    public function configureActions(Actions $actions): Actions
+    {
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL)
                 ->disable(Action::NEW,Action::DELETE);
 
         return $actions;
     }
-
     public function configureFields(string $pageName): iterable
-{
+    {
     return [
         IdField::new('id')->hideOnForm(),
         TimeField::new('lundiStart')->setLabel('Lundi Ouverture'),
@@ -43,6 +41,5 @@ class HorairesCrudController extends AbstractCrudController
         TimeField::new('dimancheStart')->setLabel('Dimanche Ouverture'),
         TimeField::new('dimancheClose')->setLabel('Dimanche Fermeture'),
     ];
-}
-    
+    }
 }

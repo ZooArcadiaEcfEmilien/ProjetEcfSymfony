@@ -3,23 +3,13 @@
 namespace App\Listeners;
 
 use App\Entity\AnimalEntity;
-use App\Entity\HabitatEntity;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-use Doctrine\ORM\Events;
 use App\Document\AnimalCounter;
 use Doctrine\Common\EventSubscriber;
 
 class MyEventSubscriber implements EventSubscriber
 {
-    public function getSubscribedEvents()
-    {
-        return [
-            'postPersist',
-        ];
-    }
-    
     private $dm;
 
     public function __construct(DocumentManager $dm)
@@ -27,25 +17,29 @@ class MyEventSubscriber implements EventSubscriber
         $this->dm = $dm;
     }
 
+    public function getSubscribedEvents()
+    {
+        return ['postPersist'];
+    }
+
     public function postPersist(LifecycleEventArgs $args)
     {
         $entity = $args->getObject();
 
-        // Vérifiez si l'entité est de type AnimalEntity
         if (!$entity instanceof AnimalEntity) {
             return;
         }
 
-        // Créez et persistez l'AnimalCounter
         $animalCounter = $this->createAnimalCounter($entity);
-
-        // Persister et flusher dans une transaction pour plus de sécurité
         $this->dm->persist($animalCounter);
         $this->dm->flush();
 
-        // Associez l'AnimalCounter à l'AnimalEntity
         $entity->setAnimalCounter($animalCounter);
-        $this->dm->flush();
+
+        // Update AnimalEntity to persist the animalCounterId
+        $em = $args->getObjectManager();
+        $em->persist($entity);
+        $em->flush();
     }
 
     private function createAnimalCounter(AnimalEntity $entity): AnimalCounter
@@ -54,7 +48,6 @@ class MyEventSubscriber implements EventSubscriber
         $animalCounter->setAnimalEntityId($entity->getId());
         $animalCounter->setAnimalEntityName($entity->getName());
         $animalCounter->setCounter(0);
-        $entity->setAnimalCounter($animalCounter);
 
         return $animalCounter;
     }

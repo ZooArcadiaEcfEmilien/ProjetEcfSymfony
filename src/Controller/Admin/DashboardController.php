@@ -26,13 +26,11 @@ class DashboardController extends AbstractDashboardController
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
         return $this->redirect($adminUrlGenerator->setController(AnimalEntityCrudController::class)->generateUrl());
     }
-
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
             ->setTitle('Gestion Administration du Zoo Arcadia');
     }
-
     public function configureMenuItems(): iterable
     {
         $roles = $this->getUser()->getRoles();
@@ -62,6 +60,5 @@ class DashboardController extends AbstractDashboardController
         
         yield MenuItem::linkToCrud('Horaires','fas fa-calendar-alt', Horaires::class)
             ->setPermission(in_array('ROLE_VETERINAIRE', $roles));
-        
     }
 }

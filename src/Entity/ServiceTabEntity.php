@@ -49,7 +49,7 @@ class ServiceTabEntity
 
     // SET FUNCTION
     public function setServiceNom(string $serviceNom): void
-    {   
+    {
         $this->serviceNom = $serviceNom;
     }
 

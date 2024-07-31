@@ -13,7 +13,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class ConnexionController extends AbstractController
 {
     #[Route('/connexion', name: 'app_connexion')]
-        public function index(AuthenticationUtils $authenticationUtils): Response    
+        public function index(AuthenticationUtils $authenticationUtils): Response
         {
             $error = $authenticationUtils->getLastAuthenticationError();
             $lastUsername = $authenticationUtils->getLastUsername();

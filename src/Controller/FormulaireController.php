@@ -28,13 +28,10 @@ class FormulaireController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            // Traitement du formulaire ici
-            // Par exemple, vous pouvez sauvegarder les données dans la base de données
 
             $this->entityManager->persist($nouveauFormulaire);
             $this->entityManager->flush();
 
-            // Redirection après soumission du formulaire
             return $this->redirectToRoute('app_formulaire');
         }
 

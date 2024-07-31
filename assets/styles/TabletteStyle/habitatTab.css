@@ -1,5 +1,4 @@
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
@@ -7,6 +6,7 @@
     .habitatsGeneral{
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
     .introduction{
         text-align: center;
@@ -66,11 +66,6 @@
     h1 {
         margin-left: 13%;
     }
-    /*h2::before{
-        content:"Les 4 habitats";
-        display: flex;
-        justify-content: center;
-    }*/
     .carrousselImageAccueil{
         width: 80%;
         height: 35%;
@@ -84,9 +79,7 @@
     .footer-links a{
         color: white;
     }
-    .habitatsGeneral{
-        text-align: center;
-    }
+
     .habitatSpe img {
         width: 90%;
         height: auto;

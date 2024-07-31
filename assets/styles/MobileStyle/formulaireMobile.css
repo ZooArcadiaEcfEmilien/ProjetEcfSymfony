@@ -1,5 +1,4 @@
 @media only screen and (max-width: 600px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
@@ -20,7 +19,6 @@
         border: solid 1px black;
         margin: 2vh auto;
     }
-
 
     /*FORMULAIRE DE CONTACT*/
     form{

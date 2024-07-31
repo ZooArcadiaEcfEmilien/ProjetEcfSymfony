@@ -36,14 +36,3 @@ class Product
         $this->title = $title;
     }
 }
-
-
-$product = new Product();
-echo"DOCUMENT_PRODUCT produit créer \n";
-
-$product->setTitle('Test Product');
-
-echo"DOCUMENT_PRODUCT $ product INSTANCIER \n";
-
-//$dm->persist($product);
-//$dm->flush();

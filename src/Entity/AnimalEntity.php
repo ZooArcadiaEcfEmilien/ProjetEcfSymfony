@@ -66,13 +66,13 @@ class AnimalEntity
 
     public function getId(): ?int
     {
-        echo "ANIMAL_ENTITY getId \n";
+
         return $this->id;
     }
 
     public function getName(): ?string
     {
-        echo "ANIMAL_ENTITY getName \n";
+
         return $this->name;
     }
 
@@ -118,7 +118,7 @@ class AnimalEntity
 
     public function setName(string $name): void
     {
-        echo "ANIMAL_ENTITY setName \n";
+
         $this->name = $name;
     }
 

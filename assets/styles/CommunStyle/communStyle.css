@@ -8,7 +8,6 @@ body {
     background-size: cover; 
     display: flex;
     flex-direction: column;
-
 }
 h1{
     color: white;

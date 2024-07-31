@@ -43,43 +43,11 @@
     </tbody>
 </table>
 
+<script src="{{ asset('js/events.js') }}"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        function loadEvents() {
-            fetch('/api/events')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.querySelector('#events-table tbody');
-                    tableBody.innerHTML = '';
-
-                    data.forEach(event => {
-                        // Créer des objets Date pour la date et les heures
-                        const eventDate = new Date(event.date);
-                        const startTime = new Date(`${event.date}T${event.start_time}`);
-                        const endTime = new Date(`${event.date}T${event.end_time}`);
-
-                        // Vérification si les dates et heures sont valides
-                        if (isNaN(eventDate.getTime()) || isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
-                            console.error("Invalid date or time format for event: ", event);
-                        } else {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td>${event.name}</td>
-                                <td>${event.description}</td>
-                                <td>${eventDate.toLocaleDateString()}</td>
-                                <td>${startTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
-                                <td>${endTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
-                                <td>${event.location}</td>
-                            `;
-                            tableBody.appendChild(row);
-                        }
-                    });
-                });
-        }
-
-        loadEvents();
+    document.getElementById('show-add-form').addEventListener('click', function() {
+        document.getElementById('add-event-form').style.display = 'block';
     });
 </script>
-
 
 {% include 'BasDePage.html.twig' %}

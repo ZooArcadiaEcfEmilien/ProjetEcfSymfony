@@ -5,21 +5,29 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const tableBody = document.querySelector('#events-table tbody');
                 tableBody.innerHTML = '';
+
                 data.forEach(event => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${event.name}</td>
-                        <td>${event.description}</td>
-                        <td>${new Date(event.date).toLocaleDateString()}</td>
-                        <td>${new Date(event.start_time).toLocaleTimeString()}</td>
-                        <td>${new Date(event.end_time).toLocaleTimeString()}</td>
-                        <td>${event.location}</td>
-                    `;
-                    tableBody.appendChild(row);
+                    const eventDate = new Date(event.date);
+                    const startTime = new Date(`${event.date}T${event.start_time}`);
+                    const endTime = new Date(`${event.date}T${event.end_time}`);
+
+                    if (isNaN(eventDate.getTime()) || isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
+                        console.error("Invalid date or time format for event: ", event);
+                    } else {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${event.name}</td>
+                            <td>${event.description}</td>
+                            <td>${eventDate.toLocaleDateString()}</td>
+                            <td>${startTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
+                            <td>${endTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
+                            <td>${event.location}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    }
                 });
             });
     }
-
     function addEvent(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -32,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             end_time: formData.get('end_time'),
             location: formData.get('location')
         };
-
         fetch('/api/event/add', {
             method: 'POST',
             headers: {

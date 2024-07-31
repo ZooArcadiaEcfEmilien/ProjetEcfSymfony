@@ -25,7 +25,6 @@ class AvisEntityCrudController extends AbstractCrudController
     {
         return AvisEntity::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {

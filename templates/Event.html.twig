@@ -1,0 +1,85 @@
+{% include 'HautDePage.html.twig' %}
+{% include 'Menu.html.twig' %}
+
+<h1>Event List</h1>
+<a href="#" id="show-add-form">Add New Event</a>
+<div id="add-event-form" style="display: none;">
+    <h2>Add New Event</h2>
+    <form id="event-form">
+        <label for="name">Event Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="date">Event Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" required>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <button type="submit">Add Event</button>
+    </form>
+</div>
+<table id="events-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les lignes d'événements seront ajoutées ici par JavaScript -->
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function loadEvents() {
+            fetch('/api/events')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#events-table tbody');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(event => {
+                        // Créer des objets Date pour la date et les heures
+                        const eventDate = new Date(event.date);
+                        const startTime = new Date(`${event.date}T${event.start_time}`);
+                        const endTime = new Date(`${event.date}T${event.end_time}`);
+
+                        // Vérification si les dates et heures sont valides
+                        if (isNaN(eventDate.getTime()) || isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
+                            console.error("Invalid date or time format for event: ", event);
+                        } else {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${event.name}</td>
+                                <td>${event.description}</td>
+                                <td>${eventDate.toLocaleDateString()}</td>
+                                <td>${startTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
+                                <td>${endTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</td>
+                                <td>${event.location}</td>
+                            `;
+                            tableBody.appendChild(row);
+                        }
+                    });
+                });
+        }
+
+        loadEvents();
+    });
+</script>
+
+
+{% include 'BasDePage.html.twig' %}

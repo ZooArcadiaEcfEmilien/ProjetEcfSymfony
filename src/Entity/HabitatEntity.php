@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 #[ORM\Entity(repositoryClass: HabitatEntityRepository::class)]
 #[ORM\Table(name: "habitat")]
 
-class HabitatEntity 
+class HabitatEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -74,7 +74,7 @@ class HabitatEntity
     
     public function __toString(): string
     {
-        return $this->habitatNom; 
+        return $this->habitatNom;
     }
 
     /**

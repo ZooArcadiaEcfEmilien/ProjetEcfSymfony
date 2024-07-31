@@ -8,7 +8,6 @@ body {
     background-size: cover; 
     display: flex;
     flex-direction: column;
-
 }
 h1{
     color: white;
@@ -25,8 +24,6 @@ h1{
 }
 
 @media only screen and (min-width: 901px) {
-    /* Styles pour les écrans plus larges (ordinateurs de bureau, ordinateurs portables) */
-
 .menu-btn {
     display: none;
 }
@@ -64,13 +61,13 @@ h1{
     justify-content: space-evenly;
     width: 100%;
     background-color: #000000;
-    color: #ffffff; /* Ajout de la couleur de texte pour contraster */
+    color: #ffffff;
 
 }
 
 footer {
     position: relative;
-    bottom: 0; /* Assure que le footer reste en bas de son parent */
+    bottom: 0;
     width: 100%;
     background-color: #000000;
     text-align: center;

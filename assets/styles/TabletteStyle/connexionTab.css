@@ -1,5 +1,4 @@
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
@@ -14,7 +13,6 @@
     .menu-btn {
         display: flex;
         background-color: #07522F;
-
         border: none;
         border-radius: 5px;
         width: 17%;
@@ -23,7 +21,6 @@
         color: white;
         font-family: fantasy;
         font-size: 100%;
-
     }
           
 
@@ -46,7 +43,7 @@
     .footer-links a{
       color: white;
   }
-          /*Formulaire de connexion*/
+    /*Formulaire de connexion*/
     .login-container {
         width: 90%;
 

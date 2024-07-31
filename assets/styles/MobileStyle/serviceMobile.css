@@ -1,5 +1,4 @@
 @media only screen and (max-width: 600px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     h2{
         text-align: center;
@@ -19,7 +18,6 @@
         border: solid 1px black;
         margin: 2vh auto;
     }
-
 
     /* 4 services */
     .service img{

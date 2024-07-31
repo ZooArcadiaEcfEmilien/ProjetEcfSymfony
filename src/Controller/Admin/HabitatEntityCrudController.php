@@ -22,7 +22,7 @@ class HabitatEntityCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return HabitatEntity::class;
-    }   
+    }
     
     public function configureFields(string $pageName): iterable
     {

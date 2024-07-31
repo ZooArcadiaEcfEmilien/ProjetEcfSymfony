@@ -1,0 +1,63 @@
+#events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #f3f3f3;
+
+}
+
+#events-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+#events-table th,
+#events-table td {
+    padding: 12px 15px;
+    text-align: center;
+
+}
+
+#events-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#events-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+#events-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* STYLE DU BOUTON ADD */
+/* Style de base pour le lien */
+#show-add-form {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #45a049;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Style pour l'état survolé du lien */
+#show-add-form:hover {
+    background-color: rgba(54, 85, 28, 0.693);
+}
+
+/* Style pour l'état actif du lien */
+#show-add-form:active {
+    background-color: #586c3f99;
+}

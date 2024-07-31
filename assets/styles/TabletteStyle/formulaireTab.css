@@ -1,5 +1,4 @@
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
@@ -62,9 +61,6 @@
     h1 {
         margin-left: 13%;
     }
-    /*h2::before{
-        content: "Formulaire de contact";
-    }*/
     h2{
         text-align: center;
     }

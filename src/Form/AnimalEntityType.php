@@ -11,8 +11,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AnimalEntityType extends AbstractType
 {
-    // La fonction buildForm est utilisée pour créer le formulaire qui sera utilisé pour créer et modifier des instances de AnimalEntity. 
-    // Elle définit la structure du formulaire en ajoutant les différents champs requis avec leurs configurations.
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

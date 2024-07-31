@@ -18,3 +18,18 @@ app_connexion:
     path: /connexion
     controller: App\Controller\ConnexionController::index
     methods: ['GET', 'POST']
+
+event_list:
+    path: /events
+    controller: App\Controller\EventController::list
+    methods: ['GET']
+
+api_event_list:
+    path: /api/events
+    controller: App\Controller\EventController::apiEventList
+    methods: ['GET']
+
+api_event_add:
+    path: /api/event/add
+    controller: App\Controller\EventController::apiEventAdd
+    methods: ['POST']

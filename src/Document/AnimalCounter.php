@@ -59,3 +59,4 @@ class AnimalCounter
         $this->counter = $counter;
     }
 }
+//

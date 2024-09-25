@@ -27,7 +27,8 @@
         "symfony/twig-bundle": "^7.1",
         "doctrine/doctrine-bundle": "^2.12",
         "doctrine/doctrine-migrations-bundle": "^3.3",
-        "symfony/stimulus-bundle": "^2.20"
+        "symfony/stimulus-bundle": "^2.20",
+        "symfony/ux-turbo": "^2.20"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

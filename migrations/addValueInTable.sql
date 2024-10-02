@@ -1,1 +1,6 @@
 /*Add script to add value in table without dashboard*/
+INSERT INTO `habitat` (`id`, `habitat_nom`, `habitat_description`, `habitat_image`) VALUES
+(16, 'Savane Africaine', 'Explorez la savane africaine : girafes, lions, zèbres et éléphants évoluent librement. Une immersion authentique dans un écosystème fascinant', '/uploads/images/Habitats/Savane 1 1.png'),
+(17, 'Forêt Tropicale', 'Bienvenue dans la forêt tropicale, où la vie foisonne. Des singes aux perroquets colorés, découvrez un écosystème dense et vibrant. Une expérience immersive au cœur de la biodiversité', '/uploads/images/Habitats/tropicale.png'),
+(18, 'Aquarium Marin', 'Plongez dans notre aquarium marin et découvrez un monde sous-marin captivant. Des coraux colorés aux poissons exotiques, explorez la diversité des océans. Une aventure fascinante pour tous les amoureux de la vie marine', '/uploads/images/Habitats/fondmarin.webp'),
+(19, 'Toundra Arctique', "Explorez la toundra arctique, un paysage de vastes étendues gelées où vivent l\'ours polaire, le renard arctique et le caribou. Découvrez la beauté sauvage de ce biome unique, où la nature défie les éléments", '/uploads/images/Habitats/toundra 1.png');

@@ -1,19 +1,10 @@
 doctrine:
     dbal:
-        driver: 'pdo_mysql'
-        server_version: '5.7.40'
+        url: '%env(resolve:DATABASE_URL)%'
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
-        dbname: 'ZooArcadiaBddEcf'
-        host: '127.0.0.1'
-        port: '8889' # Port MySQL par défaut pour MAMP
-        user: 'zooArcadiaEcf'
-        password: 'P@ssW0rdTest'
-
-        profiling_collect_backtrace: '%kernel.debug%'
-        use_savepoints: true
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true

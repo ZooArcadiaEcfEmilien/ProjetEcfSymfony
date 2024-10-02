@@ -3,7 +3,6 @@
 namespace App\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-echo"DOCUMENT_PRODUCT \n";
 
 /**
  * @MongoDB\Document

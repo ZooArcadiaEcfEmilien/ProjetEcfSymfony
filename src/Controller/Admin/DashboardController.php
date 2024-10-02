@@ -7,8 +7,6 @@ use App\Entity\AvisEntity;
 use App\Entity\FormulaireEntity;
 use App\Entity\HabitatEntity;
 use App\Entity\ServiceTabEntity;
-use App\Entity\StatistiqueEntity;
-use App\Entity\UserAccesEntity;
 use App\Entity\UserTabEntity;
 use App\Entity\Horaires;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -49,15 +47,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Services', 'fas fa-concierge-bell', ServiceTabEntity::class)
             ->setPermission(in_array('ROLE_VETERINAIRE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
 
-        yield MenuItem::linkToCrud('UserAcces', 'fas fa-user', UserAccesEntity::class)
-            ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
-
         yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class)
             ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
 
-        yield MenuItem::linkToCrud('Statistiques', 'fas fa-chart-bar', StatistiqueEntity::class)
-            ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
-        
         yield MenuItem::linkToCrud('Horaires','fas fa-calendar-alt', Horaires::class)
             ->setPermission(in_array('ROLE_VETERINAIRE', $roles));
     }

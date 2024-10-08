@@ -11,10 +11,10 @@ class DatabaseService
 
     public function __construct()
     {
-        $host = $_ENV['DATABASE_HOST'];
-        $db = $_ENV['DATABASE_NAME'];
-        $user = $_ENV['DATABASE_USER'];
-        $pass = $_ENV['DATABASE_PASSWORD'];
+        $host = $_ENV['MONGODB_URI'];
+        $db = $_ENV['MONGODB_DB'];
+        $user = $_ENV['MONGODB_USER'];
+        $pass = $_ENV['MONGODB_PASSWORD'];
         $charset = 'utf8mb4';
 
         $dsn = "mysql:host=$host;port=8889;dbname=$db;charset=$charset";

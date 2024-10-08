@@ -45,7 +45,7 @@ class DashboardController extends AbstractDashboardController
             ->setPermission(in_array('ROLE_EMPLOYE', $roles));
 
         yield MenuItem::linkToCrud('Services', 'fas fa-concierge-bell', ServiceTabEntity::class)
-            ->setPermission(in_array('ROLE_VETERINAIRE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
+            ->setPermission(in_array('ROLE_VETERINAIRE', $roles));
 
         yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class)
             ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));

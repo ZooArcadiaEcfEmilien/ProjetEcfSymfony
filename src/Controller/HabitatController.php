@@ -25,7 +25,7 @@ public function animalList($habitatId, HabitatEntityRepository $habitatRepositor
     $habitat = $habitatRepository->find($habitatId);
     $animals = $habitat->getAnimalEntities();
 
-    return $this->render('Animal/animal_list.html.twig', [
+    return $this->render('animal/animal_list.html.twig', [
         'habitat' => $habitat,
         'animals' => $animals,
     ]);

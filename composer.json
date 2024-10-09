@@ -8,6 +8,7 @@
         "ext-intl": "*",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-mongodb": "*",
         "doctrine/annotations": "^2.0",
         "doctrine/common": "^3.2",
         "doctrine/dbal": "^3",

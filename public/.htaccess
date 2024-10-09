@@ -39,25 +39,19 @@ DirectoryIndex index.php
 
 # Strict-Transport-Security (HSTS) : Force l'utilisation de HTTPS
 <IfModule mod_headers.c>
+    # HSTS
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-</IfModule>
 
-# Content Security Policy (CSP) : Contrôle les ressources chargées
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:;"
-</IfModule>
+    # X-Frame-Options
+    Header always set X-Frame-Options "DENY"
 
-# X-Content-Type-Options : Empêche la détection de type MIME
-<IfModule mod_headers.c>
+    # X-Content-Type-Options
     Header set X-Content-Type-Options "nosniff"
-</IfModule>
 
-# X-Frame-Options : Empêche le site d'être chargé dans un iframe (clickjacking)
-<IfModule mod_headers.c>
-    Header set X-Frame-Options "DENY"
-</IfModule>
-
-# X-XSS-Protection : Active la protection XSS intégrée du navigateur
-<IfModule mod_headers.c>
+    # X-XSS-Protection
     Header set X-XSS-Protection "1; mode=block"
+
+    # Content Security Policy (CSP)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; img-src 'self' data:;"
 </IfModule>
+

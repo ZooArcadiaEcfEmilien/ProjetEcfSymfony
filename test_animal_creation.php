@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once 'vendor/autoload.php';
 
 use App\Entity\AnimalEntity;
@@ -23,7 +23,7 @@ $kernel = new \App\Kernel('dev', true);
 $kernel->boot();
 
 /** @var ContainerInterface $container */
-$container = $kernel->getContainer();
+/*$container = $kernel->getContainer();
 echo "test_animal_creatio : GetCONTAINER ok \n";
 // Récupérer l'URI MongoDB depuis les paramètres
 $mongoUri = $container->getParameter('mongodb_server');

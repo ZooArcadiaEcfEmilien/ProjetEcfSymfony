@@ -1,5 +1,5 @@
 parameters:
-    mongodb_server: '%env(MONGODB_SERVER)%'
+    mongodb_server: '%env(MONGODB_URI)%'
     mongodb_db: '%env(MONGODB_DB)%'
 
 services:

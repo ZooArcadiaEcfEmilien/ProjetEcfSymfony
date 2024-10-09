@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once 'vendor/autoload.php';
 
 use App\Document\Product;
@@ -21,7 +21,7 @@ $kernel = new \App\Kernel('dev', true);
 $kernel->boot();
 
 /** @var ContainerInterface $container */
-$container = $kernel->getContainer();
+/*$container = $kernel->getContainer();
 
 // Récupérer l'URI MongoDB depuis les paramètres
 $mongoUri = $container->getParameter('mongodb_server');

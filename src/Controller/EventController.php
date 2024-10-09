@@ -33,7 +33,7 @@ class EventController extends AbstractController
 
         foreach ($events as $event) {
             $data[] = [
-                'id' => $event['id'],
+                'id' => $event['_id'],
                 'name' => $event['name'],
                 'description' => $event['description'],
                 'date' => $event['date'],

@@ -2,37 +2,22 @@
 
 namespace App\Service;
 
-use PDO;
-use PDOException;
+use MongoDB\Client;
 
 class DatabaseService
 {
-    private $pdo;
+    private $client;
+    private $db;
 
     public function __construct()
     {
-        $host = $_ENV['DATABASE_HOST'];
-        $db = $_ENV['DATABASE_NAME'];
-        $user = $_ENV['DATABASE_USER'];
-        $pass = $_ENV['DATABASE_PASSWORD'];
-        $charset = 'utf8mb4';
-
-        $dsn = "mysql:host=$host;port=8889;dbname=$db;charset=$charset";
-        $options = [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES   => false,
-        ];
-
-        try {
-            $this->pdo = new PDO($dsn, $user, $pass, $options);
-        } catch (PDOException $e) {
-            throw new PDOException($e->getMessage(), (int)$e->getCode());
-        }
+        $uri = $_ENV['MONGODB_URI'];
+        $this->client = new Client($uri);
+        $this->db = $this->client->selectDatabase($_ENV['MONGODB_DB']);
     }
 
-    public function getPdo(): PDO
+    public function getDb()
     {
-        return $this->pdo;
+        return $this->db;
     }
 }

@@ -2,65 +2,60 @@
 
 namespace App\Service;
 
+use MongoDB\Database;
+use MongoDB\BSON\ObjectId;
+
 class EventService
 {
-    private $pdo;
+    private $db;
 
     public function __construct(DatabaseService $databaseService)
     {
-        $this->pdo = $databaseService->getPdo();
+        $this->db = $databaseService->getDb(); // Obtenez la base de données MongoDB
     }
 
     public function createEvent($name, $description, $date, $startTime, $endTime, $location)
     {
-        $sql = file_get_contents(__DIR__ . '/../scripts/insert_event.sql');
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            ':name' => $name,
-            ':description' => $description,
-            ':date' => $date,
-            ':start_time' => $startTime,
-            ':end_time' => $endTime,
-            ':location' => $location
-        ]);
+        $eventData = [
+            'name' => $name,
+            'description' => $description,
+            'date' => $date,
+            'start_time' => $startTime,
+            'end_time' => $endTime,
+            'location' => $location
+        ];
+
+        // Insérez le document dans la collection 'events'
+        $this->db->events->insertOne($eventData);
     }
 
     public function getEvents()
     {
-        $sql = file_get_contents(__DIR__ . '/../scripts/select_events.sql');
-        $stmt = $this->pdo->query($sql);
-        return $stmt->fetchAll();
+        // Récupérez tous les documents de la collection 'events'
+        return $this->db->events->find()->toArray();
     }
 
     public function updateEvent($id, $name, $description, $date, $startTime, $endTime, $location)
     {
-        $sql = file_get_contents(__DIR__ . '/../scripts/update_event.sql');
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            ':id' => $id,
-            ':name' => $name,
-            ':description' => $description,
-            ':date' => $date,
-            ':start_time' => $startTime,
-            ':end_time' => $endTime,
-            ':location' => $location
-        ]);
+        $eventData = [
+            'name' => $name,
+            'description' => $description,
+            'date' => $date,
+            'start_time' => $startTime,
+            'end_time' => $endTime,
+            'location' => $location
+        ];
+
+        // Mettez à jour le document avec l'ID spécifié
+        $this->db->events->updateOne(
+            ['_id' => new \MongoDB\BSON\ObjectId($id)],
+            ['$set' => $eventData]
+        );
     }
 
     public function deleteEvent($id)
     {
-        $sql = file_get_contents(__DIR__ . '/../scripts/delete_event.sql');
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':id' => $id]);
+        // Supprimez le document avec l'ID spécifié
+        $this->db->events->deleteOne(['_id' => new \MongoDB\BSON\ObjectId($id)]);
     }
 }
-
-
-
-
-
-
-
-
-
-

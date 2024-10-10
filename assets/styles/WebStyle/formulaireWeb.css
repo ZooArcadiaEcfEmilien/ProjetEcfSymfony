@@ -44,6 +44,7 @@
         align-items: center; /* Centrer les éléments à l'intérieur */
         margin-bottom: 2%;
         height: auto;
+        width: 25%;
     }
 
     label {

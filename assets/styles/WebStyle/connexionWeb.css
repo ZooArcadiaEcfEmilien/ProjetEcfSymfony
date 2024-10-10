@@ -51,24 +51,14 @@ button {
     cursor: pointer;
     text-align: center;
 }
-.forgot-password {
-    margin-top: 5%;
-    text-align: center;
-    width: 100%;
-}
 
-.forgot-password a {
-    color: white;
-    margin-top: 2%;
-    text-decoration: none;
-}
 
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 3%;
     width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 input[type="text"], input[type="password"], input {
@@ -81,9 +71,5 @@ input[type="text"], input[type="password"], input {
 
 button:hover {
     background-color: #309f50;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
 }
 }

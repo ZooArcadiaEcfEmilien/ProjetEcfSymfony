@@ -1,80 +1,84 @@
 @media only screen and (min-width: 601px) {
-  .banderolePub {
-      height: 5%;
-      background-color: rgba(74, 114, 40, 0.5);
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
+    .banderolePub {
+        height: 5%;
+        background-color: rgba(74, 114, 40, 0.5);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-  h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-  }
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
 
-  nav {
-      display: flex;
-      background-color: rgba(54, 85, 28, 0.693);
-      padding: 10px;
-  }
+    nav {
+        display: flex;
+        background-color: rgba(54, 85, 28, 0.693);
+        padding: 10px;
+    }
 
-  nav a {
-      color: white;
-      border-right: 1px solid black;
-      text-decoration: none;
-      flex: 1;
-      text-align: center;
-      padding: 10px;
-  }
+    nav a {
+        color: white;
+        border-right: 1px solid black;
+        text-decoration: none;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+    }
 
-  #forumlaire_entity {
-      width: 70vh;
-  }
+    #forumlaire_entity {
+        width: 70vh;
+    }
 
-  form {
-    max-width: 50%; /* Limiter la largeur */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    form {
+        max-width: 50%; /* Réduire la largeur pour mieux centrer */
+        margin: 0 auto; /* Centrer le formulaire horizontalement */
+        background-color: #586c3f99;
+        border: solid white 2px;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Centrer les éléments à l'intérieur */
+        margin-bottom: 2%;
+        height: auto;
+    }
 
+    label {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        width: 100%;
+    }
 
-  label {
-      display: block;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      width: 100%;
-  }
+    input[type="text"], input[type="password"], input, textarea {
+        width: 90%; /* Ajuster la largeur pour un meilleur centrage */
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+    }
 
-  input[type="text"], input[type="password"], input, textarea {
-      width: 90%; /* Ajuster la largeur pour un meilleur centrage */
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-      font-size: 1rem;
-  }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: auto;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 10px;
+    }
 
-  button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: auto;
-      font-size: 1rem;
-      text-align: center;
-      margin-top: 10px;
-  }
-
-  button:hover {
-      background-color: #45a049;
-  }
+    button:hover {
+        background-color: #45a049;
+    }
 }

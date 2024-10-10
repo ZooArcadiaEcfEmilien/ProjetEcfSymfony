@@ -50,13 +50,19 @@
       text-align: center;
     }
   
-    input, textarea {
+    /*input, textarea {
       width: 100%;
       padding: 8px;
       margin-bottom: 10px;
       box-sizing: border-box;
-    }
-  
+    }*/
+    input[type="text"], input[type="password"], input {
+    width: 100%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 3%;
+    
+  }
     button {
       background-color: #4CAF50;
       color: white;

@@ -17,11 +17,11 @@ class ForumlaireEntityType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomFormulaire', TextType::class)
-            ->add('prenomFormulaire', TextType::class)
-            ->add('adresseMailFormulaire', EmailType::class) 
-            ->add('sujetFormulaire', TextType::class)
-            ->add('descriptionFormulaire', TextareaType::class)
+            ->add('nomFormulaire', TextType::class, ['label' => 'Nom'])
+            ->add('prenomFormulaire', TextType::class, ['label' => 'Prénom'])
+            ->add('adresseMailFormulaire', EmailType::class, ['label' => 'Adresse mail'])
+            ->add('sujetFormulaire', TextType::class, ['label' => 'Sujet'])
+            ->add('descriptionFormulaire', TextareaType::class, ['label' => 'Description'])
             ->add('submit', SubmitType::class, ['label' => 'Envoyer'])
         ;
     }

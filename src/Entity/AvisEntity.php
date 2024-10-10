@@ -31,8 +31,7 @@ class AvisEntity
     #[ORM\Column(nullable: true)]
     private ?bool $validationAvis = false;
 
-
-    // METHODES
+    // GETTERs & SETTERS
     public function getId(): ?int
     {
         return $this->id;

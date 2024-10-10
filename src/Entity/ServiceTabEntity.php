@@ -6,26 +6,26 @@ use App\Repository\ServiceTabEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceTabEntityRepository::class)]
-class ServiceTabEntity 
+class ServiceTabEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type: "string")]
     private $serviceNom;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type: "string")]
     private $serviceTitre;
 
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
     private $serviceDescription;
 
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
     private ?string $serviceImage = null;
 
-    // METHODES
+    // GETTERs & SETTERS
     public function getId(): ?int
     {
         return $this->id;
@@ -35,7 +35,7 @@ class ServiceTabEntity
         return $this->serviceNom;
     }
     public function getServiceTitre(): string
-    { 
+    {
         return $this->serviceTitre;
     }
     public function getServiceDescription(): string
@@ -47,7 +47,6 @@ class ServiceTabEntity
         return $this->serviceImage;
     }
 
-    // SET FUNCTION
     public function setServiceNom(string $serviceNom): void
     {
         $this->serviceNom = $serviceNom;
@@ -67,6 +66,4 @@ class ServiceTabEntity
     {
         $this->serviceImage = '/uploads/images/Services/' . $serviceImage;
     }
-    
-
 }

@@ -1,76 +1,90 @@
 @media only screen and (min-width: 601px) {
-
-    .banderolePub{
-        height: 5%;
-        background-color: rgba(74, 114, 40, 0.5);
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    h1{
-      content: " Formulaire de contact ";
-      text-align: center;
+  .banderolePub {
+    height: 5%;
+    background-color: rgba(74, 114, 40, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
-    nav {
-        display: flex;
-        background-color: rgba(54, 85, 28, 0.693);
-        padding: 10px;
-    }
-    
-    nav a {
-        color: white;
-        border-right: 1px solid black;
-        text-decoration: none;
-        flex: 1; 
-        text-align: center;
-        padding: 10px; 
-    }
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 
-#forumlaire_entity{
-  width: 70vh;
-}
+  nav {
+    display: flex;
+    background-color: rgba(54, 85, 28, 0.693);
+    padding: 10px;
+  }
+
+  nav a {
+    color: white;
+    border-right: 1px solid black;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #forumlaire_entity {
+    width: 70vh;
+  }
+
   form {
-      max-width: 80%;
-      margin: auto;
-      background-color: #586c3f99;
-      border: solid white 2px;
-      padding: 1%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      margin-bottom: 2%;
-      height: 70vh;
-      align-items: center;
-    }
-  
-    label {
-      display: block;
-      margin-bottom: 5px;
-      text-align: center;
-    }
-  
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-  
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      
-    }
-  
-    button:hover {
-      background-color: #45a049;
-    }
-
+    margin: 0 auto;
+    /* Centrer le formulaire horizontalement */
+    background-color: #586c3f99;
+    border: solid white 2px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Centrer les éléments à l'intérieur */
+    margin-bottom: 2%;
+    height: auto;
+    min-width: 30%;
+    max-width: 50%;
   }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+}

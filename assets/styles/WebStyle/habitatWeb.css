@@ -1,42 +1,42 @@
 @media only screen and (min-width: 601px) {
 
-.banderolePub{
-    height: 5%;
-    background-color: rgba(74, 114, 40, 0.5);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+    .banderolePub {
+        height: 5%;
+        background-color: rgba(74, 114, 40, 0.5);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-nav {
-    display: flex;
-    background-color: rgba(54, 85, 28, 0.693);
-    padding: 10px;
-}
+    nav {
+        display: flex;
+        background-color: rgba(54, 85, 28, 0.693);
+        padding: 10px;
+    }
 
-nav a {
-    color: white;
-    border-right: 1px solid black;
-    text-decoration: none;
-    flex: 1; 
-    text-align: center;
-    padding: 10px; 
-}
+    nav a {
+        color: white;
+        border-right: 1px solid black;
+        text-decoration: none;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+    }
 
-.horairesOuverture {
-    text-align: center;
-}
-.formButton {
-    height: auto;
-    padding: 0;
-    margin: 0;
-    border: solid white 1px;
-    border-radius: 20%;
+    .horairesOuverture {
+        text-align: center;
+    }
 
-}
-.likeButton{
-    background-color: rgba(74, 114, 40, 0.5);
-    border-radius: 20%;
-}
+    .formButton {
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: solid white 1px;
+        border-radius: 20%;
+    }
 
+    .likeButton {
+        background-color: rgba(74, 114, 40, 0.5);
+        border-radius: 20%;
+    }
 }

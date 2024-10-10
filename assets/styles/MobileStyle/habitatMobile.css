@@ -1,33 +1,37 @@
 @media only screen and (max-width: 600px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
     }
-    .habitatsGeneral{
+
+    .habitatsGeneral {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
-    .introduction{
+
+    .introduction {
         text-align: center;
     }
+
     .nav-container {
         text-align: center;
     }
 
-    .carrousselImageAccueil{
+    .carrousselImageAccueil {
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
+
     .habitatSpe img {
         width: 90%;
         height: auto;
         margin: 5%;
     }
-    .habitatTitle{
+
+    .habitatTitle {
         background-color: rgba(17, 61, 13, 0.472);
         background-color: #07522f;
         height: 5vh;
@@ -37,5 +41,4 @@
         align-items: center;
         margin: 0 auto;
     }
-    
 }

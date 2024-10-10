@@ -7,11 +7,15 @@ framework:
         cookie_secure: auto       # Utilise HTTPS si disponible
         cookie_httponly: true     # Empêche l'accès via JavaScript
         cookie_samesite: strict   # Politique SameSite pour les cookies de session
-        # Note that the session will be started ONLY if you read or write from it.
-        enabled: true
+        enabled: true             # Activer la gestion de session
 
-    #esi: true
-    #fragments: true
+    router:
+        strict_requirements: null
+        http_port: 80             # Port HTTP par défaut
+        https_port: 443           # Port HTTPS par défaut
+
+    trusted_proxies: '127.0.0.1, REMOTE_ADDR'  # Autoriser les proxies comme Heroku
+    trusted_headers: ['x-forwarded-for', 'x-forwarded-proto']  # Gérer les en-têtes de sécurité
 
 when@test:
     framework:

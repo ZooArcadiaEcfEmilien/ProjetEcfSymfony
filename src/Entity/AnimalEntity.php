@@ -4,8 +4,6 @@ namespace App\Entity;
 
 use App\Repository\AnimalEntityRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Document\AnimalCounter;
-
 
 #[ORM\Entity(repositoryClass: AnimalEntityRepository::class)]
 #[ORM\Table(name: "animal")]
@@ -43,24 +41,6 @@ class AnimalEntity
     #[ORM\ManyToOne(inversedBy: "animalEntities")]
     #[ORM\JoinColumn(nullable: false)]
     private ?HabitatEntity $habitatDeLAnimal = null;
-
-    #[ORM\Column(type: "string", length: 24, nullable: true)]
-    private $animalCounterId;
-
-    private $animalCounter;
-
-    // GET SET ANIMAL COUNTER
-
-    public function setAnimalCounter(AnimalCounter $animalCounter): void
-    {
-        $this->animalCounterId = $animalCounter->getId();
-        $this->animalCounter = $animalCounter;
-    }
-
-    public function getAnimalCounter(): ?AnimalCounter
-    {
-        return $this->animalCounter;
-    }
 
     // GETTERs & SETTERS
 

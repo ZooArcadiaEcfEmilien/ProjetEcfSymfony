@@ -20,7 +20,7 @@ class FormulaireController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-    
+
     public function index(FormulaireEntityRepository $formulaireRespository, Request $request): Response
     {
         $nouveauFormulaire = new FormulaireEntity();

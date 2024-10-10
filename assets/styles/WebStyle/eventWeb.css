@@ -36,8 +36,6 @@
     cursor: pointer;
 }
 
-/* STYLE DU BOUTON ADD */
-/* Style de base pour le lien */
 #show-add-form {
     display: inline-block;
     padding: 10px 20px;
@@ -52,12 +50,10 @@
     margin: 0 auto;
 }
 
-/* Style pour l'état survolé du lien */
 #show-add-form:hover {
     background-color: rgba(54, 85, 28, 0.693);
 }
 
-/* Style pour l'état actif du lien */
 #show-add-form:active {
     background-color: #586c3f99;
 }

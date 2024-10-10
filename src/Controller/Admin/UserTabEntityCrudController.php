@@ -16,7 +16,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\Validator\Constraints\Length;
 
 class UserTabEntityCrudController extends AbstractCrudController
-{   
+{
     public static function getEntityFqcn(): string
     {
         return UserTabEntity::class;
@@ -25,7 +25,7 @@ class UserTabEntityCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL)
-                ->disable(Action::EDIT);
+            ->disable(Action::EDIT);
         return $actions;
     }
 
@@ -53,12 +53,12 @@ class UserTabEntityCrudController extends AbstractCrudController
         return [
 
             ChoiceField::new('roles')
-                
+
                 ->setChoices($roleChoices)
                 ->allowMultipleChoices()
                 ->setRequired(true)
                 ->setLabel('Rôles'),
-            
+
             TextField::new('password')
                 ->setFormType(PasswordType::class)
                 ->setFormTypeOptions([

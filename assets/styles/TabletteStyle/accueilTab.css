@@ -3,15 +3,16 @@
     .element-a-cacher {
         display: none;
     }
-    
-    .introduction{
+
+    .introduction {
         text-align: center;
         background-color: rgb(0, 61, 25, 0.67);
     }
+
     .nav-container {
         text-align: center;
     }
-          
+
     .menu-btn {
         display: block;
         background-color: #07522F;
@@ -21,16 +22,16 @@
         color: white;
         font-family: fantasy;
         font-size: 100%;
-
-
     }
-          
+
     .nav-menu {
         display: none;
     }
-    .menu-btn:hover{
+
+    .menu-btn:hover {
         background-color: #309f50;
-    } 
+    }
+
     .nav-menu.active {
         display: block;
         position: absolute;
@@ -38,7 +39,7 @@
         left: 0;
         background-color: #07522F;
     }
-          
+
     .nav-menu a {
         display: block;
         padding: 10px;
@@ -46,43 +47,49 @@
         color: #ffffff;
         font-weight: bold;
     }
-    h1::before{
+
+    h1::before {
         content: "Zoo Arcadia";
     }
-    .menuTitreMobile{
+
+    .menuTitreMobile {
         display: flex;
         background-color: #07522F;
         height: 10vh;
     }
+
     h1 {
         margin-left: 13%;
     }
-    .carrousselImageAccueil{
+
+    .carrousselImageAccueil {
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-    .horairesOuverture{
+
+    .horairesOuverture {
         text-align: center;
         position: relative;
         background-color: rgb(0, 61, 25, 0.67);
-
     }
-    footer{
+
+    footer {
         text-align: center;
         position: relative;
         bottom: 0;
         background-color: #0000007a;
     }
-    .footer-links a{
+
+    .footer-links a {
         color: white;
     }
-    .CustomerReviews{
+
+    .CustomerReviews {
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-          
 }

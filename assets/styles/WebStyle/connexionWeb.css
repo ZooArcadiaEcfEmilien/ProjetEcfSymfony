@@ -1,9 +1,10 @@
 @media only screen and (min-width: 601px) {
-    body{
+    body {
         display: flex;
         flex-direction: column;
     }
-    .banderolePub{
+
+    .banderolePub {
         height: 5%;
         background-color: rgba(255, 5, 5, 0.595);
         display: flex;
@@ -16,69 +17,62 @@
         background-color: rgba(54, 85, 28, 0.693);
         padding: 10px;
     }
-    
+
     nav a {
         color: white;
         border-right: 1px solid black;
         text-decoration: none;
-        flex: 1; 
+        flex: 1;
         text-align: center;
-        padding: 10px; 
+        padding: 10px;
     }
 
-/*FORMULAIRE DE CONTACT*/
-.login-container {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 15vh;
-}
+    /*FORMULAIRE DE CONTACT*/
+    .login-container {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.form-group {
-    margin-bottom: 5%;
-  }
-.login-form{
-    background-color: darkgreen;
-    padding: 3%;
-    border-radius: 3%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .form-group {
+        margin-bottom: 5%;
+        width: 100%;
+    }
 
-}
-button{
-    background-color: rgb(15, 62, 14);
-    width: 100%;
-    padding: 5%;
-    color: #fff;
-    border: none;
-    border-radius: 3%;
-    cursor: pointer;
-}
-.forgot-password a{
-    color: white;
-    margin-top: 2%;
-    text-decoration: none;
+    button {
+        background-color: rgb(15, 62, 14);
+        width: 100%;
+        padding: 5%;
+        color: #fff;
+        border: none;
+        border-radius: 3%;
+        cursor: pointer;
+        text-align: center;
+    }
 
-}
-.forgot-password{
-    margin-top: 5%;
-    text-align: center;
 
-}
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 3%;
-  }
-  input[type="text"], input[type="password"], input {
-    width: 100%;
-    padding: 2%;
-    border: 1px solid #ccc;
-    border-radius: 3%;
-    
-  }
-  button:hover {
-    background-color: #309f50;
-  }
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 3%;
+        width: 100%;
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input {
+        width: 100%;
+        padding: 2%;
+        border: 1px solid #ccc;
+        border-radius: 3%;
+        box-sizing: border-box;
+    }
+
+    button:hover {
+        background-color: #309f50;
+    }
 }

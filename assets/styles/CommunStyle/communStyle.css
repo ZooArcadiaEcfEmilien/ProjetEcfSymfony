@@ -5,39 +5,47 @@ body {
     background-color: rgb(74, 114, 40);
     color: white;
     background-image: url("/uploads/images/Commun/fond.jpeg");
-    background-size: cover; 
+    background-size: cover;
     display: flex;
     flex-direction: column;
 }
-h1{
+
+h1 {
     color: white;
 }
+
+input:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid #309f50;
+}
+
 @media only screen and (max-width: 900px) {
 
     .nav-menu {
         display: none;
     }
-    
+
     .nav-menu.active {
         display: block;
     }
 }
 
 @media only screen and (min-width: 901px) {
-.menu-btn {
-    display: none;
-}
+    .menu-btn {
+        display: none;
+    }
 }
 
 /* ANIMAL_LIST RESPONSIVE*/
 
-.animals{
+.animals {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-
 }
+
 .animal {
     display: flex;
     flex-direction: column;
@@ -47,22 +55,24 @@ h1{
     margin-bottom: 1%;
     align-items: center;
 }
-.animal div{
+
+.animal div {
     text-align: center;
 }
-.animal img{
+
+.animal img {
     width: 30%;
     margin-bottom: 1%;
 }
 
 /*FOOTER*/
+
 .footer-links {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     background-color: #000000;
     color: #ffffff;
-
 }
 
 footer {
@@ -73,18 +83,19 @@ footer {
     text-align: center;
 }
 
-
-  
 .footer-links a {
     color: white;
     text-decoration: none;
 }
+
 /* MENU + TITRE MOBILE */
+
 @media only screen and (max-width: 600px) {
 
     h2 {
         color: white;
     }
+
     .menu-btn {
         display: block;
         background-color: #07522F;
@@ -96,32 +107,35 @@ footer {
         font-size: 100%;
         height: 100%;
         padding: 1%;
-
     }
-    .menuTitreMobile h1{
+
+    .menuTitreMobile h1 {
         width: 70%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-    }  
+    }
+
     .nav-menu {
         display: none;
     }
-    .menu-btn:hover{
+
+    .menu-btn:hover {
         background-color: #309f50;
-    } 
+    }
+
     .nav-menu.active {
         display: block;
         position: absolute;
-        top:6%;
+        top: 6%;
         left: 0;
         background-color: #07522F;
-        width: 40%; 
-        border-radius: 0 0 5px 5px; 
+        width: 40%;
+        border-radius: 0 0 5px 5px;
         border: solid white 1px;
     }
-          
+
     .nav-menu a {
         display: block;
         padding: 10px;
@@ -130,19 +144,21 @@ footer {
         font-weight: bold;
     }
 
-    .menuTitreMobile{
+    .menuTitreMobile {
         display: flex;
         background-color: #07522F;
-        height:6%;
+        height: 6%;
         width: 100%;
         min-height: 6%;
-
     }
-    h1{
+
+    h1 {
         text-align: center;
-    }    
+    }
 }
+
 /* HABITAT RESPONSIVE*/
+
 .habitats {
     display: flex;
     flex-wrap: wrap;

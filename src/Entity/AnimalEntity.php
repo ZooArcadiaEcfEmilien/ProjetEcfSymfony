@@ -50,7 +50,7 @@ class AnimalEntity
     private $animalCounter;
 
     // GET SET ANIMAL COUNTER
-    
+
     public function setAnimalCounter(AnimalCounter $animalCounter): void
     {
         $this->animalCounterId = $animalCounter->getId();
@@ -62,7 +62,7 @@ class AnimalEntity
         return $this->animalCounter;
     }
 
-    // Getters and setters...
+    // GETTERs & SETTERS
 
     public function getId(): ?int
     {

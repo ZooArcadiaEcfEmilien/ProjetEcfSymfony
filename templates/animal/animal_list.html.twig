@@ -15,10 +15,10 @@
                 <p>Commentaire sur l'animal: {{ animal.getDetailsCommentaire()| raw }}</p>
 
                 <img src="{{ asset('/uploads/images/Animal/' ~ animal.getImage()) }}" alt="{{ animal.getName() }}">
-                <form class="formButton" action="" method="post">
+                <!--<form class="formButton" action="" method="post">
                     <button class ="likeButton"type="submit">Like</button>
                 </form>
-                <p>Likes:</p>
+                <p>Likes:</p>-->
             </div>
         {% endfor %}
     </div>

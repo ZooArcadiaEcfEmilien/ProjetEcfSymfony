@@ -14,10 +14,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
 class AvisEntityCrudController extends AbstractCrudController
 {
-    public function configureActions(Actions $actions): Actions{
+    public function configureActions(Actions $actions): Actions
+    {
 
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL)
-                ->disable(Action::DELETE);
+            ->disable(Action::DELETE);
 
         return $actions;
     }
@@ -25,15 +26,14 @@ class AvisEntityCrudController extends AbstractCrudController
     {
         return AvisEntity::class;
     }
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
             BooleanField::new('validationAvis', 'Valider l\'avis ?'),
             IntegerField::new('nombreEtoileAvis', 'Nombre d\'étoile'),
-            TextField::new('pseudoAvis','Pseudo'),
-            TextEditorField::new('descriptionAvis','Description'),
+            TextField::new('pseudoAvis', 'Pseudo'),
+            TextEditorField::new('descriptionAvis', 'Description'),
         ];
     }
-    
 }

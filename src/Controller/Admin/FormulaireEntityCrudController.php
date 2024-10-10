@@ -14,10 +14,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
 class FormulaireEntityCrudController extends AbstractCrudController
 {
-    public function configureActions(Actions $actions): Actions{
+    public function configureActions(Actions $actions): Actions
+    {
 
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL)
-                ->disable(Action::NEW,Action::DELETE, Action::EDIT);
+            ->disable(Action::NEW , Action::DELETE, Action::EDIT);
 
         return $actions;
     }
@@ -25,7 +26,7 @@ class FormulaireEntityCrudController extends AbstractCrudController
     {
         return FormulaireEntity::class;
     }
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -38,5 +39,4 @@ class FormulaireEntityCrudController extends AbstractCrudController
 
         ];
     }
-    
 }

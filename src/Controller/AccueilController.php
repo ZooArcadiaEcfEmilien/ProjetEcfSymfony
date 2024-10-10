@@ -25,26 +25,25 @@ class AccueilController extends AbstractController
         $this->entityManager = $entityManager;
     }
     public function index(AvisEntityRepository $avisRepository, Request $request, HorairesRepository $horairesRepository): Response
-{
-    $avis = $avisRepository->findBy(['validationAvis' => true]);
+    {
+        $avis = $avisRepository->findBy(['validationAvis' => true]);
 
-    $nouvelAvis = new AvisEntity();
-    $form = $this->createForm(AvisEntityType::class, $nouvelAvis);
-    $form->handleRequest($request);
+        $nouvelAvis = new AvisEntity();
+        $form = $this->createForm(AvisEntityType::class, $nouvelAvis);
+        $form->handleRequest($request);
 
-    $horaires = $horairesRepository->find(2); // Les horaires sont stockés dans la base de données avec un identifiant de 2
+        $horaires = $horairesRepository->find(2); // Les horaires sont stockés dans la base de données avec un identifiant de 2
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        $this->entityManager->persist($nouvelAvis);
-        $this->entityManager->flush();
-        return $this->redirectToRoute('app_accueil');
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->entityManager->persist($nouvelAvis);
+            $this->entityManager->flush();
+            return $this->redirectToRoute('app_accueil');
+        }
+
+        return $this->render('Accueil.html.twig', [
+            'avis' => $avis,
+            'form' => $form->createView(),
+            'horaires' => $horaires,
+        ]);
     }
-
-    return $this->render('Accueil.html.twig', [
-        'avis' => $avis,
-        'form' => $form->createView(),
-        'horaires' => $horaires, 
-    ]);
-}
-
 }

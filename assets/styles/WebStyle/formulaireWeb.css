@@ -33,7 +33,6 @@
     }
 
     form {
-        max-width: 50%; /* Réduire la largeur pour mieux centrer */
         margin: 0 auto; /* Centrer le formulaire horizontalement */
         background-color: #586c3f99;
         border: solid white 2px;
@@ -44,7 +43,7 @@
         align-items: center; /* Centrer les éléments à l'intérieur */
         margin-bottom: 2%;
         height: auto;
-        width: 25%;
+        width: 30%;
     }
 
     label {

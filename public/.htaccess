@@ -1,11 +1,3 @@
-# --- Forcer la redirection HTTP vers HTTPS ---
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    # Rediriger tout le trafic HTTP vers HTTPS
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-
 # Utilisation du front controller en tant que fichier index
 DirectoryIndex index.php
 

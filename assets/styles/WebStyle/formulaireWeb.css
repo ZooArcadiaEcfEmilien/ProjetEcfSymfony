@@ -43,7 +43,8 @@
         align-items: center; /* Centrer les éléments à l'intérieur */
         margin-bottom: 2%;
         height: auto;
-        width: 30%;
+        min-width: 30%;
+        max-width: 50%;
     }
 
     label {

@@ -1,12 +1,13 @@
 #events-table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 1.1em;
     font-family: Arial, sans-serif;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     background-color: #f3f3f3;
-
+    align-self: center;
+    height: 100%;
 }
 
 #events-table thead tr {

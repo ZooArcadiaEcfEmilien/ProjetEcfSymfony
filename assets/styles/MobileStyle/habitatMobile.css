@@ -41,4 +41,19 @@
         align-items: center;
         margin: 0 auto;
     }
+
+    .habitat {
+        margin-bottom: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.38);
+        padding: 4%;
+        border-radius: 5%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: auto;
+    }
 }

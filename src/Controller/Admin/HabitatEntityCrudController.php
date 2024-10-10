@@ -14,7 +14,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class HabitatEntityCrudController extends AbstractCrudController
 {
-    public function configureActions(Actions $actions): Actions{
+    public function configureActions(Actions $actions): Actions
+    {
 
         $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
         return $actions;
@@ -23,11 +24,11 @@ class HabitatEntityCrudController extends AbstractCrudController
     {
         return HabitatEntity::class;
     }
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(), 
+            IdField::new('id')->hideOnForm(),
             TextField::new('habitatNom', 'Habitat'),
             TextField::new('habitatDescription', 'Description'),
             ImageField::new('habitatImage', 'Insérer une image')->setUploadDir('/public/uploads/images/Habitats'),

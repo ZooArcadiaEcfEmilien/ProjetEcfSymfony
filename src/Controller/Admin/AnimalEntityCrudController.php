@@ -33,7 +33,7 @@ class AnimalEntityCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            FormField::addTab('Présentation','fa-solid fa-paw'),
+            FormField::addTab('Présentation', 'fa-solid fa-paw'),
             IdField::new('id')->hideOnForm(),
             TextField::new('name', 'Nom'),
             TextField::new('race', 'Race'),

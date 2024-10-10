@@ -3,7 +3,8 @@
     .element-a-cacher {
         display: none;
     }
-    .avis{
+
+    .avis {
         text-align: center;
         min-height: 30vh;
         display: flex;
@@ -12,52 +13,57 @@
         justify-content: space-around;
         background-color: rgba(255, 255, 255, 0.579);
         width: 80%;
-    
     }
-    .carousel-control-next{
-        width: 10%;
-    }
-    .carousel-control-prev{
+
+    .carousel-control-next {
         width: 10%;
     }
 
-    .carousel-control-next::before{
+    .carousel-control-prev {
+        width: 10%;
+    }
+
+    .carousel-control-next::before {
         content: '>';
     }
-    .carousel-control-prev::before{
+
+    .carousel-control-prev::before {
         content: '<';
     }
-    .carousel-item.active{
+
+    .carousel-item.active {
         display: flex;
         justify-content: center;
     }
-    .introduction{
+
+    .introduction {
         text-align: center;
         background-color: rgb(0, 61, 25, 0.67);
         color: white;
     }
+
     .nav-container {
         text-align: center;
     }
-          
-    .carrousselImageAccueil{
+
+    .carrousselImageAccueil {
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-    .horairesOuverture{
+
+    .horairesOuverture {
         text-align: center;
         position: relative;
         background-color: rgb(0, 61, 25, 0.67);
         color: white;
     }
 
-    .CustomerReviews{
+    .CustomerReviews {
         width: 80%;
         height: 35%;
         border: solid 1px black;
         margin: 2vh auto;
     }
-          
 }

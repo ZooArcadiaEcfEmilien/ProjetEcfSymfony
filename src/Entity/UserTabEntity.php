@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 #[ORM\Entity(repositoryClass: UserTabEntityRepository::class)]
-#[ORM\Table(name:"user")]
+#[ORM\Table(name: "user")]
 #[UniqueEntity(fields: ['mail'], message: 'Il y a déjà un compte avec cette adresse email')]
 class UserTabEntity implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -20,21 +20,21 @@ class UserTabEntity implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type: "string")]
     private $userName;
     /**
      * @return string the hashed password for this user
      */
-    #[ORM\Column(type:"string", length:255)]
+    #[ORM\Column(type: "string", length: 255)]
     private string $password;
 
-    #[ORM\Column(type:"string", unique: true)]
+    #[ORM\Column(type: "string", unique: true)]
     private $mail;
 
     #[ORM\Column(type: 'json')]
     private array $roles = [];
 
-    //  METHODES 
+    // GETTERs & SETTERS
 
     public function getId(): ?int
     {
@@ -65,7 +65,7 @@ class UserTabEntity implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->userName = $userName;
     }
-        /**
+    /**
      * @see UserInterface
      */
     public function getRoles(): array

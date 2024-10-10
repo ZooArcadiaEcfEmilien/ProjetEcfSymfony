@@ -1,16 +1,18 @@
 @media only screen and (max-width: 600px) {
-    /* Styles pour les écrans de petite taille (mobiles) */
 
     .element-a-cacher {
         display: none;
     }
-    .introduction{
+
+    .introduction {
         text-align: center;
     }
+
     .nav-container {
         text-align: center;
     }
-    .carrousselImageAccueil{
+
+    .carrousselImageAccueil {
         width: 80%;
         height: 35%;
         border: solid 1px black;
@@ -23,18 +25,19 @@
         height: 90%;
         margin: 5%;
     }
-    
+
     .form-group {
         margin-bottom: 5%;
-      }
-    .login-form{
+    }
+
+    .login-form {
         background-color: darkgreen;
         padding: 3%;
         border-radius: 3%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
     }
-    button{
+
+    button {
         background-color: rgb(15, 62, 14);
         width: 100%;
         padding: 5%;
@@ -43,33 +46,37 @@
         border-radius: 3%;
         cursor: pointer;
     }
-    .forgot-password a{
+
+    .forgot-password a {
         color: white;
         margin-top: 2%;
         text-decoration: none;
-
     }
-    .forgot-password{
+
+    .forgot-password {
         margin-top: 5%;
         text-align: center;
-
     }
+
     label {
         display: block;
         font-weight: bold;
         margin-bottom: 3%;
-      }
-      input[type="text"], input[type="password"] {
+    }
+
+    input[type="text"],
+    input[type="password"] {
         width: 90%;
         padding: 2%;
         border: 1px solid #ccc;
         border-radius: 3%;
-        
-      }
-      button:hover {
+    }
+
+    button:hover {
         background-color: #309f50;
-      }
-      .forgot-password a:hover {
+    }
+
+    .forgot-password a:hover {
         text-decoration: underline;
-      }
+    }
 }

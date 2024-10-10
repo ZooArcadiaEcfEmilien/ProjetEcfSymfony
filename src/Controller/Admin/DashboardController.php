@@ -36,10 +36,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Animals', 'fas fa-paw', AnimalEntity::class);
 
         yield MenuItem::linkToCrud('Avis', 'fas fa-star', AvisEntity::class)
-            ->setPermission(in_array('', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
+            ->setPermission(in_array('', $roles) || in_array('ROLE_VETERINAIRE', $roles));
 
         yield MenuItem::linkToCrud('Formulaires', 'fas fa-file-alt', FormulaireEntity::class)
-            ->setPermission(in_array('', $roles)|| in_array('ROLE_VETERINAIRE', $roles));
+            ->setPermission(in_array('', $roles) || in_array('ROLE_VETERINAIRE', $roles));
 
         yield MenuItem::linkToCrud('Habitats', 'fas fa-home', HabitatEntity::class)
             ->setPermission(in_array('ROLE_EMPLOYE', $roles));
@@ -50,7 +50,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('UserTab', 'fas fa-table', UserTabEntity::class)
             ->setPermission(in_array('ROLE_EMPLOYE', $roles) || in_array('ROLE_VETERINAIRE', $roles));
 
-        yield MenuItem::linkToCrud('Horaires','fas fa-calendar-alt', Horaires::class)
+        yield MenuItem::linkToCrud('Horaires', 'fas fa-calendar-alt', Horaires::class)
             ->setPermission(in_array('ROLE_VETERINAIRE', $roles));
     }
 }

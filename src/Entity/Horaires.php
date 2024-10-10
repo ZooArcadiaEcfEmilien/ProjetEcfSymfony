@@ -58,6 +58,8 @@ class Horaires
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $dimancheClose = null;
 
+    // GETTERs & SETTERS
+
     public function getId(): ?int
     {
         return $this->id;

@@ -17,13 +17,13 @@ class HabitatEntity
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type:"string")]
+    #[ORM\Column(type: "string")]
     private $habitatNom;
 
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
     private $habitatDescription;
 
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
     private ?string $habitatImage = null;
 
     /**
@@ -36,6 +36,8 @@ class HabitatEntity
     {
         $this->animalEntities = new ArrayCollection();
     }
+
+    // GETTERs & SETTERS
 
     public function getId(): ?int
     {
@@ -71,7 +73,7 @@ class HabitatEntity
     {
         $this->habitatImage = '/uploads/images/Habitats/' . $habitatImage;
     }
-    
+
     public function __toString(): string
     {
         return $this->habitatNom;

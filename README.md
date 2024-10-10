@@ -39,3 +39,7 @@ Avant de commencer, assure-toi d'avoir installé les éléments suivants :
 6. Exécuter le script /Migrations/setup.sql pour initialisé la table SQL 
 
 7. Exécuter le script /Migrations/addValueInTable.sql si vous souhaitez ajoutez des données par défauts
+
+## Déploiement
+
+Le site est déployé et disponible sur le lien suivant : https://app-arcadia-38c21c4909e6.herokuapp.com/accueil 

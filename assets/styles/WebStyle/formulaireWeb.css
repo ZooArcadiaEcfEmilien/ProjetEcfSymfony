@@ -8,7 +8,6 @@
   }
 
   h1 {
-      content: "Formulaire de contact";
       text-align: center;
       font-size: 2rem;
       margin-bottom: 20px;
@@ -34,15 +33,15 @@
   }
 
   form {
-      max-width: 60%; /* Réduire la largeur pour une meilleure lisibilité */
-      margin: auto;
+      max-width: 50%; /* Réduire la largeur pour mieux centrer */
+      margin: 0 auto; /* Centrer le formulaire horizontalement */
       background-color: #586c3f99;
       border: solid white 2px;
       padding: 2%;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Centrer verticalement */
-      align-items: center; /* Centrer horizontalement */
+      justify-content: center;
+      align-items: center; /* Centrer les éléments à l'intérieur */
       margin-bottom: 2%;
       height: auto;
   }
@@ -53,18 +52,17 @@
       text-align: center;
       font-weight: bold;
       font-size: 1.1rem;
-      width: 100%; /* Centrer les labels */
+      width: 100%;
   }
 
   input[type="text"], input[type="password"], input, textarea {
-      width: 90%;
+      width: 90%; /* Ajuster la largeur pour un meilleur centrage */
       padding: 10px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       font-size: 1rem;
-      text-align: center; /* Centrer le texte dans les champs */
   }
 
   button {
@@ -74,7 +72,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      width: 50%; /* Taille ajustée pour le bouton centré */
+      width: auto;
       font-size: 1rem;
       text-align: center;
       margin-top: 10px;

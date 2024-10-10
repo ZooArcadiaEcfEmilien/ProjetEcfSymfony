@@ -61,3 +61,14 @@
 #show-add-form:active {
     background-color: #586c3f99;
 }
+#add-event-form {
+    max-width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

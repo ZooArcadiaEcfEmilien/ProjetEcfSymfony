@@ -33,18 +33,14 @@
   }
 
   form {
-      max-width: 50%; /* Réduire la largeur pour mieux centrer */
-      margin: 0 auto; /* Centrer le formulaire horizontalement */
-      background-color: #586c3f99;
-      border: solid white 2px;
-      padding: 2%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; /* Centrer les éléments à l'intérieur */
-      margin-bottom: 2%;
-      height: auto;
-  }
+    max-width: 50%; /* Limiter la largeur */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
   label {
       display: block;

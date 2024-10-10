@@ -38,11 +38,15 @@ h2{
 form div{
     width: 100%;
 }
-.nouvelAvis{
-    max-width: 100%;
-    width: 70%;
-    margin: 0 auto;
+.nouvelAvis {
+    max-width: 50%; /* Ajuster la taille pour être plus cohérent */
+    margin: 20px auto; /* Centrer horizontalement avec un espacement suffisant en haut et en bas */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
+
 
 .carousel-control-next{
     background-color: rgba(54, 85, 28, 0.693);

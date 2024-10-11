@@ -31,7 +31,7 @@
     }
 
     .login-form {
-        background-color: darkgreen;
+        background-color: #07522f;
         padding: 3%;
         border-radius: 3%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,6 +45,7 @@
         border: none;
         border-radius: 3%;
         cursor: pointer;
+        border: solid white 1px;
     }
 
     .forgot-password a {

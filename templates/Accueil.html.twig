@@ -43,7 +43,19 @@
 
         {{ form_start(form) }}
         {{ form_row(form.pseudoAvis, {'label': 'Votre pseudo'}) }}
-        {{ form_row(form.nombreEtoileAvis, {'label': 'Nombre d\'étoiles'}) }}
+        <div class="form-group">
+            {{ form_label(form.nombreEtoileAvis, 'Nombre d\'étoiles') }}
+            {{ form_widget(form.nombreEtoileAvis, {
+                'attr': {
+                    'type': 'number',     
+                    'min': '1',           
+                    'max': '5',           
+                    'step': '1',          
+                    'placeholder': '1 à 5'
+            }
+            }) 
+            }}
+        </div>        
         {{ form_row(form.descriptionAvis, {'label': 'Description'}) }}
         {{ form_end(form) }}
 
